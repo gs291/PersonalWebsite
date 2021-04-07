@@ -11,8 +11,7 @@ const Nav = styled(AppBar)`
   justify-content: center;
 `;
 
-export default function Navbar({ className }) {
-
+export default function Navbar({className}) {
 
     return (
       <>
