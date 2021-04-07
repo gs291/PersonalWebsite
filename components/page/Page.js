@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import Header from "./Header";
 import Footer from "../footer/Footer";
-import Navbar from "../navbar/Navbar";
+import Introduction from "./Introduction";
 import siteColors from "../../lib/utils/siteColors";
 import {getMobile} from "../../lib/redux/selectors";
 import {updateMobile} from "../../lib/redux/actions";
@@ -14,11 +14,6 @@ const PageContainer = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-`;
-
-const Nav = styled(Navbar)`
-  background-image: linear-gradient(${siteColors.nav.dark }, ${ siteColors.background.main.dark});
-  box-shadow: none;
 `;
 
 const Foot = styled(Footer)`
@@ -52,12 +47,10 @@ export default function Page(props) {
         <>
             <Header />
             <PageContainer>
-                <Nav />
-
+                <Introduction />
                 <Main>
                     {props.children}
                 </Main>
-
                 <Foot />
             </PageContainer>
         </>
