@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import {Typography} from "@material-ui/core";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
-import siteSizes from "../../lib/utils/siteSizes";
 import {fontFamily} from "../../lib/utils/utils";
+import siteSizes from "../../lib/utils/siteSizes";
 
 const FooterContainer = styled.footer`
   display: flex;
