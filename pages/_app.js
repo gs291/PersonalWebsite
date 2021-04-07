@@ -44,12 +44,12 @@ export default function App({ Component, pageProps }) {
 
   return (
       <Provider store={store}>
-        <Global styles={globals} />
-        <StylesProvider injectFirst>
-          <Page>
-            <Component {...pageProps} />
-          </Page>
-        </StylesProvider>
+          <Global styles={globals} />
+          <StylesProvider injectFirst>
+              <Page>
+                  <Component {...pageProps} />
+              </Page>
+          </StylesProvider>
       </Provider>
   );
 }
