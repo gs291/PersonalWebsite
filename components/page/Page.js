@@ -1,13 +1,14 @@
 import {useEffect} from "react";
 import styled from "@emotion/styled";
+import { useMediaQuery } from "@material-ui/core";
 import {useDispatch, useSelector} from "react-redux";
-import { Container, useMediaQuery } from "@material-ui/core";
 
 import Footer from "../footer/Footer";
 import Navbar from "../navbar/Navbar";
 import siteColors from "../../lib/utils/siteColors";
 import {getMobile} from "../../lib/redux/selectors";
 import {updateMobile} from "../../lib/redux/actions";
+import Header from "./Header";
 
 const PageContainer = styled.div`
   display: flex;
@@ -18,13 +19,6 @@ const PageContainer = styled.div`
 const Nav = styled(Navbar)`
   background-image: linear-gradient(${ siteColors.nav.dark }, ${ siteColors.background.main.dark });
   box-shadow: none;
-`;
-
-const MainContainer = styled(Container)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 `;
 
 const Foot = styled(Footer)`
@@ -48,19 +42,24 @@ export default function Page(props) {
       padding-top: 15px;
       ${!mobile ? "padding-right: 10px;" : ""}
       padding-bottom: 30px;
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     `;
 
     return (
-        <PageContainer>
-            <Nav />
+        <>
+            <Header />
+            <PageContainer>
+                <Nav />
 
-            <Main >
-                <MainContainer maxWidth="lg">
+                <Main>
                     { props.children }
-                </MainContainer>
-            </Main>
+                </Main>
 
-            <Foot />
-        </PageContainer>
+                <Foot />
+            </PageContainer>
+        </>
     );
 }

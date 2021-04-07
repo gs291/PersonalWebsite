@@ -1,10 +1,10 @@
 import Head from "next/head";
 
-export default function Header({ title }) {
+export default function Header() {
     return (
         <>
             <Head>
-                <title>{ title && `${title} - ` }Bloons</title>
+                <title>Gregory Sanchez</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
         </>
