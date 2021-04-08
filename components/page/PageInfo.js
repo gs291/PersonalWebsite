@@ -8,7 +8,7 @@ const Info = styled.div`
   width: ${props => props.mobile ? 95 : 80}%;
   background-color: ${props => props.dark ? siteColors.background.card.dark : siteColors.background.card.light};
   padding: 3em 2em;
-  border-radius: 5px;
+  border-radius: 20px;
   color: ${props => props.dark ? siteColors.text.dark : siteColors.text.light};
 `;
 
