@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
+import {useSelector} from "react-redux";
 import {Typography} from "@material-ui/core";
+
 import FixedDivider from "../divider/FixedDivider";
 import siteColors from "../../lib/utils/siteColors";
-import {useSelector} from "react-redux";
 import {getDarkMode} from "../../lib/redux/selectors";
 
 const Text = styled(Typography)`
