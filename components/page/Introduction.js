@@ -23,7 +23,7 @@ export default function Introduction() {
       position: absolute;
       z-index: 0;
       bottom: 0;
-      right: ${mobile ? 5 : 50}vh;
+      right: ${mobile ? 5 : 40}vh;
     `;
 
     const TextContainer = styled.div`
