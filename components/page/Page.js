@@ -7,8 +7,8 @@ import Header from "./Header";
 import Footer from "../footer/Footer";
 import Introduction from "./Introduction";
 import siteColors from "../../lib/utils/siteColors";
-import {getMobile} from "../../lib/redux/selectors";
 import {updateMobile} from "../../lib/redux/actions";
+import {getDarkMode, getMobile} from "../../lib/redux/selectors";
 
 const PageContainer = styled.div`
   display: flex;
@@ -17,15 +17,14 @@ const PageContainer = styled.div`
 `;
 
 const Foot = styled(Footer)`
-  background-image: linear-gradient(${siteColors.background.main.dark }, ${ siteColors.nav.dark});
   justify-content: center;
   align-items: center;
-  color: ${siteColors.text.dark};
 `;
 
 export default function Page(props) {
     const dispatch = useDispatch();
     const mobile = useSelector(getMobile);
+    const darkMode = useSelector(getDarkMode);
     const screen = useMediaQuery('(max-width: 960px)');
     useEffect(() => {
         dispatch(updateMobile(screen));
@@ -33,8 +32,7 @@ export default function Page(props) {
 
     const Main = styled.main`
       flex: 1;
-      background-color: ${siteColors.background.main.dark};
-      padding-top: 15px;
+      background-color: ${darkMode ? siteColors.background.main.dark : siteColors.background.main.light};
       ${!mobile ? "padding-right: 10px;" : ""}
       padding-bottom: 30px;
       
