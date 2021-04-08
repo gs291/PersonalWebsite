@@ -2,14 +2,14 @@ import styled from "@emotion/styled";
 import {useSelector} from "react-redux";
 
 import siteColors from "../../lib/utils/siteColors";
-import {getMobile} from "../../lib/redux/selectors";
+import {getDarkMode, getMobile} from "../../lib/redux/selectors";
 
 const Info = styled.div`
   width: 80%;
-  background-color: ${siteColors.background.card.dark};
+  background-color: ${props => props.dark ? siteColors.background.card.dark : siteColors.background.card.light};
   padding: 3em 2em;
   border-radius: 5px;
-  color: ${siteColors.text.dark};
+  color: ${props => props.dark ? siteColors.text.dark : siteColors.text.light};
 `;
 
 const InfoContainer = styled.div`
@@ -21,11 +21,12 @@ const InfoContainer = styled.div`
 
 export default function PageInfo({ className, children }) {
     const mobile = useSelector(getMobile);
+    const darkMode = useSelector(getDarkMode);
 
     return (
         <>
             <InfoContainer className={className}>
-                <Info>
+                <Info dark={darkMode ? 1 : 0}>
                     {children}
                 </Info>
             </InfoContainer>
