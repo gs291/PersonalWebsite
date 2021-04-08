@@ -33,7 +33,6 @@ export default function Page(props) {
     const Main = styled.main`
       flex: 1;
       background-color: ${darkMode ? siteColors.background.main.dark : siteColors.background.main.light};
-      ${!mobile ? "padding-right: 10px;" : ""}
       padding-bottom: 30px;
       
       display: flex;
