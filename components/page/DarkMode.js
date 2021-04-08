@@ -12,10 +12,10 @@ const DarkModeButton = styled(Button)`
   padding: 0;
   width: 64px;
   height: 64px;
-  background-color: ${props => props.dark ? siteColors.background.card.dark : siteColors.background.card.light};
+  background-color: ${props => props["data-dm"] ? siteColors.background.card.dark : siteColors.background.card.light};
   
   &:hover {
-    background-color: ${props => props.dark ? siteColors.hover.darkMode.dark : siteColors.hover.darkMode.light};
+    background-color: ${props => props["data-dm"] ? siteColors.hover.darkMode.dark : siteColors.hover.darkMode.light};
   }
   
   & .MuiSvgIcon-root {
@@ -35,7 +35,7 @@ export default function DarkMode({className}) {
                 <div>
                     <DarkModeButton
                         onClick={() => dispatch(toggleDarkMode())}
-                        dark={darkMode ? 1 : 0}
+                        data-dm={darkMode}
                         className={className}
                     >
                         {darkMode ? (

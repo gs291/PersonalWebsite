@@ -21,31 +21,31 @@ const Foot = styled(Footer)`
   align-items: center;
 `;
 
+const Main = styled.main`
+  flex: 1;
+  background-color: ${props => props["data-dm"] ? siteColors.background.main.dark : siteColors.background.main.light};
+  padding-bottom: 30px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export default function Page(props) {
     const dispatch = useDispatch();
-    const mobile = useSelector(getMobile);
     const darkMode = useSelector(getDarkMode);
     const screen = useMediaQuery('(max-width: 960px)');
+
     useEffect(() => {
         dispatch(updateMobile(screen));
     }, [screen]);
-
-    const Main = styled.main`
-      flex: 1;
-      background-color: ${darkMode ? siteColors.background.main.dark : siteColors.background.main.light};
-      padding-bottom: 30px;
-      
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    `;
 
     return (
         <>
             <Header />
             <PageContainer>
                 <Introduction />
-                <Main>
+                <Main data-dm={darkMode}>
                     {props.children}
                 </Main>
                 <Foot />

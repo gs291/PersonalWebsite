@@ -8,7 +8,7 @@ import {getDarkMode} from "../../lib/redux/selectors";
 const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
-  color: ${props => props.dark ? siteColors.text.dark : siteColors.text.light};
+  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
 `;
 
 export default function Project({project}) {
@@ -16,7 +16,7 @@ export default function Project({project}) {
 
     return (
         <>
-            <ProjectContainer dark={darkMode ? 1 : 0}>
+            <ProjectContainer data-dm={darkMode}>
                 <Typography variant="h4">
                     {project.name}
                 </Typography>
