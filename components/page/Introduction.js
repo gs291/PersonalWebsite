@@ -37,6 +37,7 @@ export default function Introduction() {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      text-align: center;
       align-items: center;
       position: absolute;
       
@@ -50,9 +51,20 @@ export default function Introduction() {
             <IntroductionContainer>
                 <SplashBackground />
                 <TextContainer>
-                    <Typography variant="h2" component="h1">
-                        Hi! I'm Gregory Sanchez!
-                    </Typography>
+                    {mobile ? (
+                        <>
+                            <Typography variant="h2" component="h1">
+                                Hi!
+                            </Typography>
+                            <Typography variant="h2" component="h1">
+                                I'm Gregory Sanchez!
+                            </Typography>
+                        </>
+                    ) : (
+                        <Typography variant="h2" component="h1">
+                            Hi! I'm Gregory Sanchez!
+                        </Typography>
+                    )}
                     <Typography variant="h5">
                         A Full Stack Developer
                     </Typography>
