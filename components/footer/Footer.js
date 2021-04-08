@@ -52,9 +52,15 @@ const LN = styled(LinkedInIcon)`
   height: 100%;
 `;
 
+const SmallGHLink = styled(SocialMedia)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const GH = styled(GitHubIcon)`
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 `;
 
 export default function Footer({ className }) {
@@ -83,13 +89,13 @@ export default function Footer({ className }) {
             >
                 <LN />
             </SocialMedia>
-            <SocialMedia
+            <SmallGHLink
                 color="inherit"
                 href="https://github.com/gs291"
                 data-dm={darkMode}
             >
                 <GH />
-            </SocialMedia>
+            </SmallGHLink>
         </FooterContainer>
     );
 }
