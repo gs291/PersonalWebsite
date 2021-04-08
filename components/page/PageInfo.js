@@ -5,7 +5,7 @@ import siteColors from "../../lib/utils/siteColors";
 import {getDarkMode, getMobile} from "../../lib/redux/selectors";
 
 const Info = styled.div`
-  width: 80%;
+  width: ${props => props.mobile ? 95 : 80}%;
   background-color: ${props => props.dark ? siteColors.background.card.dark : siteColors.background.card.light};
   padding: 3em 2em;
   border-radius: 5px;
@@ -26,7 +26,7 @@ export default function PageInfo({ className, children }) {
     return (
         <>
             <InfoContainer className={className}>
-                <Info dark={darkMode ? 1 : 0}>
+                <Info dark={darkMode ? 1 : 0} mobile={mobile ? 1 : 0}>
                     {children}
                 </Info>
             </InfoContainer>
