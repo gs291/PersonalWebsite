@@ -7,7 +7,6 @@ const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   color: ${siteColors.text.dark};
-  margin-bottom: 20px;
 `;
 
 export default function Project({project}) {

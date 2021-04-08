@@ -1,10 +1,16 @@
+import styled from "@emotion/styled";
 import {Grid} from "@material-ui/core";
 import {useSelector} from "react-redux";
 
 import Project from "./Project";
+import PageInfo from "../page/PageInfo";
 import {getMobile} from "../../lib/redux/selectors";
 import siteProjects from "../../lib/utils/siteProjects";
 
+
+const Proj = styled(Grid)`
+    width: 100%;
+`;
 
 export default function Projects() {
     const mobile = useSelector(getMobile);
@@ -16,9 +22,11 @@ export default function Projects() {
                   alignItems="center"
             >
                 { siteProjects.map(proj => (
-                    <Grid item key={proj.id}>
-                        <Project project={proj} />
-                    </Grid>
+                    <Proj item key={proj.id}>
+                        <PageInfo>
+                            <Project project={proj} />
+                        </PageInfo>
+                    </Proj>
                 ))}
             </Grid>
         </>

@@ -12,6 +12,7 @@ const Text = styled(Typography)`
 const TextContainer = styled.div`
   width: 100%;
   text-align: left;
+  margin-top: 30px;
 `;
 
 export default function TitleDivider({className, title}) {
