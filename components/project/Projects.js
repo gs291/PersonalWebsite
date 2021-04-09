@@ -17,7 +17,7 @@ export default function Projects() {
     return (
         <>
             <Grid container
-                  spacing={mobile ? 2 : 6}
+                  spacing={mobile ? 4 : 6}
                   direction="column"
                   alignItems="center"
             >
