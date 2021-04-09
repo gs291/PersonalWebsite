@@ -10,7 +10,7 @@ import DarkMode from "./DarkMode";
 const IntroductionContainer = styled.header`
   color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
   background-color: ${props => props["data-dm"] ? siteColors.background.main.dark : siteColors.background.main.light};
-  min-height: 85vh;
+  min-height: 90vh;
   position: relative;
 `;
 

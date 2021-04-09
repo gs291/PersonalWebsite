@@ -10,6 +10,7 @@ const Info = styled.div`
   padding: 3em 2em;
   border-radius: 20px;
   color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
+  filter: drop-shadow(10px 10px 5px #0000007e);
 `;
 
 const InfoContainer = styled.div`
