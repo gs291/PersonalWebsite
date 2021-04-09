@@ -27,12 +27,12 @@ const SocialMedia = styled(Link)`
   margin-bottom: 20px;
 
   border-radius: 20%;
-  color: ${props => props["data-dm"] ? "white" : "black"};
+  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
   transition: 0.3s;
 
   &:hover {
-    background-color: ${props => props["data-dm"] ? "white" : "black"};
-    color: ${props => props["data-dm"] ? "black" : "white"};
+    background-color: ${props => props["data-dm"] ? siteColors.background.border.dark : siteColors.background.border.light};
+    color: ${props => props["data-dm"] ? siteColors.text.light : siteColors.text.dark};
   }
 `;
 
