@@ -24,7 +24,12 @@ const Title = styled(Text)`
 const Description = styled(Typography)`
   width: ${props => props.mobile ? 100 : 80}%;
   text-align: center;
+  font-size: 1.25em;
   color: ${props => props["data-dm"] ? "rgba(255, 255, 255, 0.5)" : "rgba(0, 0, 0, 0.5)"};
+`;
+
+const Detail = styled(Typography)`
+  font-size: 1.25em;
 `;
 
 export default function Project({project}) {
@@ -43,9 +48,9 @@ export default function Project({project}) {
                 <ul>
                     {project.details.map((detail, idx) => (
                         <li key={idx}>
-                            <Typography variant="body2">
+                            <Detail variant="body2">
                                 {detail}
-                            </Typography>
+                            </Detail>
                         </li>
                     ))}
                 </ul>
