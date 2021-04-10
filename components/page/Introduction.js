@@ -8,43 +8,46 @@ import {getDarkMode, getMobile} from "../../lib/redux/selectors";
 import DarkMode from "./DarkMode";
 
 const IntroductionContainer = styled.header`
-  color: ${props => props.dark ? siteColors.text.dark : siteColors.text.light};
-  background-color: ${props => props.dark ? siteColors.background.main.dark : siteColors.background.main.light};
-  min-height: 85vh;
+  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
+  background-color: ${props => props["data-dm"] ? siteColors.background.main.dark : siteColors.background.main.light};
+  min-height: 90vh;
   position: relative;
+  
+`;
+
+const DarkModeContainer = styled.div`
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: ${props => props["data-m"] ? 10 : 30}vw;
+`;
+
+const TextContainer = styled.div`
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  
+  width: 100%;
+  height: 100%;
+  padding: 0 ${props => props["data-m"] ? 0 : "5%"};
+  padding-top: 5rem;
+  transition: 0.3s;
 `;
 
 
-export default function Introduction() {
+export default function Introduction({className}) {
     const mobile = useSelector(getMobile);
     const darkMode = useSelector(getDarkMode);
 
-    const DarkModeContainer = styled.div`
-      position: absolute;
-      z-index: 0;
-      bottom: 0;
-      right: ${mobile ? 10 : 30}vw;
-    `;
-
-    const TextContainer = styled.div`
-      z-index: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      align-items: center;
-      position: absolute;
-      
-      width: 100%;
-      height: 100%;
-      padding: 0 ${mobile ? 0 : "5%"};
-      padding-top: 5rem;
-    `;
     return (
         <>
-            <IntroductionContainer dark={darkMode ? 1 : 0}>
+            <IntroductionContainer className={className} data-dm={darkMode}>
                 <SplashBackground />
-                <TextContainer>
+                <TextContainer data-m={mobile}>
                     {mobile ? (
                         <>
                             <Typography variant="h2" component="h1">
@@ -63,7 +66,7 @@ export default function Introduction() {
                         A Full Stack Developer
                     </Typography>
                 </TextContainer>
-                <DarkModeContainer>
+                <DarkModeContainer data-m={mobile}>
                     <DarkMode />
                 </DarkModeContainer>
             </IntroductionContainer>

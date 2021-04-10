@@ -1,10 +1,10 @@
+import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 
 import RightToLeft from "./RightToLeft";
 import LeftToRight from "./LeftToRight";
 import {randomColor} from "../../lib/utils/utils";
 import siteColors from "../../lib/utils/siteColors";
-import {useSelector} from "react-redux";
 import {getDarkMode} from "../../lib/redux/selectors";
 
 export default function Animator({direction, top, delay}) {

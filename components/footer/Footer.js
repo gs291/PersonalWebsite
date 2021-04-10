@@ -15,8 +15,8 @@ const FooterContainer = styled.footer`
   display: flex;
   flex-direction: row;
   height: ${siteSizes.footer.height};
-  color: ${props => props.dark ? siteColors.text.dark : siteColors.text.light};
-  background-color: ${props => props.dark ? siteColors.background.main.dark :  siteColors.background.main.light};
+  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
+  background-color: ${props => props["data-dm"] ? siteColors.background.main.dark :  siteColors.background.main.light};
 `;
 
 const SocialMedia = styled(Link)`
@@ -27,12 +27,12 @@ const SocialMedia = styled(Link)`
   margin-bottom: 20px;
 
   border-radius: 20%;
-  color: ${props => props.dark ? "white" : "black"};
+  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
   transition: 0.3s;
 
   &:hover {
-    background-color: ${props => props.dark ? "white" : "black"};
-    color: ${props => props.dark ? "black" : "white"};
+    background-color: ${props => props["data-dm"] ? siteColors.background.border.dark : siteColors.background.border.light};
+    color: ${props => props["data-dm"] ? siteColors.text.light : siteColors.text.dark};
   }
 `;
 
@@ -52,44 +52,50 @@ const LN = styled(LinkedInIcon)`
   height: 100%;
 `;
 
+const SmallGHLink = styled(SocialMedia)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const GH = styled(GitHubIcon)`
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 `;
 
 export default function Footer({ className }) {
     const darkMode = useSelector(getDarkMode);
 
     return (
-        <FooterContainer className={className} dark={darkMode ? 1 : 0}>
+        <FooterContainer className={className} data-dm={darkMode}>
             <SocialMedia
                 color="inherit"
                 href="https://twitter.com/GS_291"
-                dark={darkMode ? 1 : 0}
+                data-dm={darkMode}
             >
                 <TW />
             </SocialMedia>
             <SocialMedia
                 color="inherit"
                 href="https://www.instagram.com/gregory_sanchez/"
-                dark={darkMode ? 1 : 0}
+                data-dm={darkMode}
             >
                 <INS />
             </SocialMedia>
             <SocialMedia
                 color="inherit"
                 href="https://www.linkedin.com/in/gregory-sanchez-05b211159"
-                dark={darkMode ? 1 : 0}
+                data-dm={darkMode}
             >
                 <LN />
             </SocialMedia>
-            <SocialMedia
+            <SmallGHLink
                 color="inherit"
                 href="https://github.com/gs291"
-                dark={darkMode ? 1 : 0}
+                data-dm={darkMode}
             >
                 <GH />
-            </SocialMedia>
+            </SmallGHLink>
         </FooterContainer>
     );
 }

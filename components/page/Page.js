@@ -19,34 +19,39 @@ const PageContainer = styled.div`
 const Foot = styled(Footer)`
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
+`;
+
+const Main = styled.main`
+  flex: 1;
+  background-color: ${props => props["data-dm"] ? siteColors.background.main.dark : siteColors.background.main.light};
+  padding-bottom: 30px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+`;
+
+const Intro = styled(Introduction)`
+  transition: 0.3s;
 `;
 
 export default function Page(props) {
     const dispatch = useDispatch();
-    const mobile = useSelector(getMobile);
     const darkMode = useSelector(getDarkMode);
     const screen = useMediaQuery('(max-width: 960px)');
+
     useEffect(() => {
         dispatch(updateMobile(screen));
     }, [screen]);
-
-    const Main = styled.main`
-      flex: 1;
-      background-color: ${darkMode ? siteColors.background.main.dark : siteColors.background.main.light};
-      ${!mobile ? "padding-right: 10px;" : ""}
-      padding-bottom: 30px;
-      
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    `;
 
     return (
         <>
             <Header />
             <PageContainer>
-                <Introduction />
-                <Main>
+                <Intro />
+                <Main data-dm={darkMode}>
                     {props.children}
                 </Main>
                 <Foot />

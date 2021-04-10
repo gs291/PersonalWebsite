@@ -1,14 +1,16 @@
 import styled from "@emotion/styled";
+import {useSelector} from "react-redux";
 import {Typography} from "@material-ui/core";
+
 import FixedDivider from "../divider/FixedDivider";
 import siteColors from "../../lib/utils/siteColors";
-import {useSelector} from "react-redux";
 import {getDarkMode} from "../../lib/redux/selectors";
 
 const Text = styled(Typography)`
   width: max-content;
-  color: ${props => props.dark ? siteColors.text.dark : siteColors.text.light};
-  border-bottom: 6px solid ${props => props.dark ? siteColors.background.border.dark : siteColors.background.border.light};
+  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
+  border-bottom: 6px solid ${props => props["data-dm"] ? siteColors.background.border.dark : siteColors.background.border.light};
+  transition: 0.3s;
 `;
 
 const TextContainer = styled.div`
@@ -23,7 +25,7 @@ export default function TitleDivider({className, title}) {
     return (
         <>
             <TextContainer className={className}>
-                <Text variant="h2" dark={darkMode ? 1 : 0}>
+                <Text variant="h2" data-dm={darkMode}>
                     {title}
                 </Text>
             </TextContainer>
