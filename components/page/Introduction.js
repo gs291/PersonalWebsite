@@ -12,6 +12,7 @@ const IntroductionContainer = styled.header`
   background-color: ${props => props["data-dm"] ? siteColors.background.main.dark : siteColors.background.main.light};
   min-height: 90vh;
   position: relative;
+  
 `;
 
 const DarkModeContainer = styled.div`
@@ -34,16 +35,17 @@ const TextContainer = styled.div`
   height: 100%;
   padding: 0 ${props => props["data-m"] ? 0 : "5%"};
   padding-top: 5rem;
+  transition: 0.3s;
 `;
 
 
-export default function Introduction() {
+export default function Introduction({className}) {
     const mobile = useSelector(getMobile);
     const darkMode = useSelector(getDarkMode);
 
     return (
         <>
-            <IntroductionContainer data-dm={darkMode}>
+            <IntroductionContainer className={className} data-dm={darkMode}>
                 <SplashBackground />
                 <TextContainer data-m={mobile}>
                     {mobile ? (

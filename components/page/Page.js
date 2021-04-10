@@ -19,6 +19,7 @@ const PageContainer = styled.div`
 const Foot = styled(Footer)`
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
 `;
 
 const Main = styled.main`
@@ -29,6 +30,11 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 0.3s;
+`;
+
+const Intro = styled(Introduction)`
+  transition: 0.3s;
 `;
 
 export default function Page(props) {
@@ -44,7 +50,7 @@ export default function Page(props) {
         <>
             <Header />
             <PageContainer>
-                <Introduction />
+                <Intro />
                 <Main data-dm={darkMode}>
                     {props.children}
                 </Main>

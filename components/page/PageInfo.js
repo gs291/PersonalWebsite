@@ -10,7 +10,14 @@ const Info = styled.div`
   padding: 3em ${props => props["data-m"] ? 0.5 : 2 }em;
   border-radius: 20px;
   color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
-  filter: drop-shadow(10px 10px 5px #0000007e);
+  filter: drop-shadow(5px 5px 5px ${props => props["data-dm"] ? siteColors.background.card.shadow.dark : siteColors.background.card.shadow.light});
+  transition: 0.3s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    filter: drop-shadow(10px 10px 5px ${props => props["data-dm"] ? siteColors.background.card.shadow.dark : siteColors.background.card.shadow.light});
+  }
 `;
 
 const InfoContainer = styled.div`

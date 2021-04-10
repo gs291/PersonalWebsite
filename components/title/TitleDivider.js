@@ -10,6 +10,7 @@ const Text = styled(Typography)`
   width: max-content;
   color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
   border-bottom: 6px solid ${props => props["data-dm"] ? siteColors.background.border.dark : siteColors.background.border.light};
+  transition: 0.3s;
 `;
 
 const TextContainer = styled.div`
