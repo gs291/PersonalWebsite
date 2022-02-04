@@ -1,10 +1,10 @@
-import {Provider} from "react-redux";
-import {Global, css} from "@emotion/react";
-import {StylesProvider} from "@material-ui/core/styles";
+import {Provider} from 'react-redux';
+import {Global, css} from '@emotion/react';
+import {StyledEngineProvider} from '@mui/material/styles';
 
-import store from "../lib/redux/store";
-import Page from "../components/page/Page";
-import {fontFamily} from "../lib/utils/utils";
+import store from '../lib/redux/store';
+import Page from '../components/page/Page';
+import {fontFamily} from '../lib/utils/utils';
 
 const globals = css`
   html, 
@@ -45,11 +45,11 @@ export default function App({ Component, pageProps }) {
   return (
       <Provider store={store}>
           <Global styles={globals} />
-          <StylesProvider injectFirst>
+          <StyledEngineProvider injectFirst>
               <Page>
                   <Component {...pageProps} />
               </Page>
-          </StylesProvider>
+          </StyledEngineProvider>
       </Provider>
   );
 }

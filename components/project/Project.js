@@ -1,20 +1,20 @@
-import styled from "@emotion/styled";
-import {useSelector} from "react-redux";
-import {Typography} from "@material-ui/core";
+import styled from '@emotion/styled';
+import {useSelector} from 'react-redux';
+import {Typography} from '@mui/material';
 
-import siteColors from "../../lib/utils/siteColors";
-import {getDarkMode, getMobile} from "../../lib/redux/selectors";
+import siteColors from '../../lib/utils/siteColors';
+import {getDarkMode, getMobile} from '../../lib/redux/selectors';
 
 const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
+  color: ${props => props['data-dm'] ? siteColors.text.dark : siteColors.text.light};
 `;
 
 const Text = styled(Typography)`
   width: max-content;
-  border-bottom: 6px solid ${props => props["data-dm"] ? siteColors.background.border.dark : siteColors.background.border.light};
+  border-bottom: 6px solid ${props => props['data-dm'] ? siteColors.background.border.dark : siteColors.background.border.light};
 `;
 
 const Title = styled(Text)`
@@ -25,7 +25,7 @@ const Description = styled(Typography)`
   width: ${props => props.mobile ? 100 : 80}%;
   text-align: center;
   font-size: 1.25em;
-  color: ${props => props["data-dm"] ? "rgba(255, 255, 255, 0.5)" : "rgba(0, 0, 0, 0.5)"};
+  color: ${props => props['data-dm'] ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'};
 `;
 
 const Detail = styled(Typography)`

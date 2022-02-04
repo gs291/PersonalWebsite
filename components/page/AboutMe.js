@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
-import {Typography} from "@material-ui/core";
+import styled from '@emotion/styled';
+import {Typography} from '@mui/material';
 
-import PageInfo from "./PageInfo";
+import PageInfo from './PageInfo';
 
 export default function AboutMe() {
     return (

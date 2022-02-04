@@ -1,21 +1,21 @@
-import styled from "@emotion/styled";
-import {Button, Tooltip} from "@material-ui/core";
-import {useDispatch, useSelector} from "react-redux";
-import WbIncandescentIcon from '@material-ui/icons/WbIncandescent';
-import WbIncandescentOutlinedIcon from '@material-ui/icons/WbIncandescentOutlined';
+import styled from '@emotion/styled';
+import {Button, Tooltip} from '@mui/material';
+import {useDispatch, useSelector} from 'react-redux';
+import WbIncandescentIcon from '@mui/icons-material/WbIncandescent';
+import WbIncandescentOutlinedIcon from '@mui/icons-material/WbIncandescentOutlined';
 
-import siteColors from "../../lib/utils/siteColors";
-import {getDarkMode} from "../../lib/redux/selectors";
-import {toggleDarkMode} from "../../lib/redux/actions";
+import siteColors from '../../lib/utils/siteColors';
+import {getDarkMode} from '../../lib/redux/selectors';
+import {toggleDarkMode} from '../../lib/redux/actions';
 
 const DarkModeButton = styled(Button)`
   padding: 0;
   width: 64px;
   height: 64px;
-  background-color: ${props => props["data-dm"] ? siteColors.background.card.dark : siteColors.background.card.light};
+  background-color: ${props => props['data-dm'] ? siteColors.background.card.dark : siteColors.background.card.light};
   
   &:hover {
-    background-color: ${props => props["data-dm"] ? siteColors.hover.darkMode.dark : siteColors.hover.darkMode.light};
+    background-color: ${props => props['data-dm'] ? siteColors.hover.darkMode.dark : siteColors.hover.darkMode.light};
   }
   
   & .MuiSvgIcon-root {
@@ -31,7 +31,7 @@ export default function DarkMode({className}) {
 
     return (
         <>
-            <Tooltip title={darkMode ? "Enable Light Mode" : "Enable Dark Mode"} placement="top">
+            <Tooltip title={darkMode ? 'Enable Light Mode' : 'Enable Dark Mode'} placement="top">
                 <div>
                     <DarkModeButton
                         onClick={() => dispatch(toggleDarkMode())}

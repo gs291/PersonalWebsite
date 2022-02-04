@@ -1,22 +1,22 @@
-import styled from "@emotion/styled";
-import {useSelector} from "react-redux";
+import styled from '@emotion/styled';
+import {useSelector} from 'react-redux';
 
-import siteColors from "../../lib/utils/siteColors";
-import {getDarkMode, getMobile} from "../../lib/redux/selectors";
+import siteColors from '../../lib/utils/siteColors';
+import {getDarkMode, getMobile} from '../../lib/redux/selectors';
 
 const Info = styled.div`
-  width: ${props => props["data-m"] ? 95 : 80}%;
-  background-color: ${props => props["data-dm"] ? siteColors.background.card.dark : siteColors.background.card.light};
-  padding: 3em ${props => props["data-m"] ? 0.5 : 2 }em;
+  width: ${props => props['data-m'] ? 95 : 80}%;
+  background-color: ${props => props['data-dm'] ? siteColors.background.card.dark : siteColors.background.card.light};
+  padding: 3em ${props => props['data-m'] ? 0.5 : 2 }em;
   border-radius: 20px;
-  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
-  filter: drop-shadow(5px 5px 5px ${props => props["data-dm"] ? siteColors.background.card.shadow.dark : siteColors.background.card.shadow.light});
+  color: ${props => props['data-dm'] ? siteColors.text.dark : siteColors.text.light};
+  filter: drop-shadow(5px 5px 5px ${props => props['data-dm'] ? siteColors.background.card.shadow.dark : siteColors.background.card.shadow.light});
   transition: 0.3s;
 
   &:hover,
   &:active,
   &:focus {
-    filter: drop-shadow(10px 10px 5px ${props => props["data-dm"] ? siteColors.background.card.shadow.dark : siteColors.background.card.shadow.light});
+    filter: drop-shadow(10px 10px 5px ${props => props['data-dm'] ? siteColors.background.card.shadow.dark : siteColors.background.card.shadow.light});
   }
 `;
 

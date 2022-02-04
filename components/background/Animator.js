@@ -1,11 +1,11 @@
-import {useSelector} from "react-redux";
-import {useEffect, useState} from "react";
+import {useSelector} from 'react-redux';
+import {useEffect, useState} from 'react';
 
-import RightToLeft from "./RightToLeft";
-import LeftToRight from "./LeftToRight";
-import {randomColor} from "../../lib/utils/utils";
-import siteColors from "../../lib/utils/siteColors";
-import {getDarkMode} from "../../lib/redux/selectors";
+import RightToLeft from './RightToLeft';
+import LeftToRight from './LeftToRight';
+import {randomColor} from '../../lib/utils/utils';
+import siteColors from '../../lib/utils/siteColors';
+import {getDarkMode} from '../../lib/redux/selectors';
 
 export default function Animator({direction, top, delay}) {
     const darkMode = useSelector(getDarkMode);
@@ -21,10 +21,10 @@ export default function Animator({direction, top, delay}) {
 
     return (
         <>
-            {direction === "R2L" && (
+            {direction === 'R2L' && (
                 <RightToLeft top={top} delay={delay} backgroundColor={backgroundColor} updateBackgroundColor={updateBackgroundColor}/>
             )}
-            {direction === "L2R" && (
+            {direction === 'L2R' && (
                 <LeftToRight top={top} delay={delay} backgroundColor={backgroundColor} updateBackgroundColor={updateBackgroundColor}/>
             )}
         </>

@@ -1,8 +1,8 @@
-import Head from "next/head";
-import {useSelector} from "react-redux";
+import Head from 'next/head';
+import {useSelector} from 'react-redux';
 
-import {getDarkMode} from "../../lib/redux/selectors";
-import siteColors from "../../lib/utils/siteColors";
+import {getDarkMode} from '../../lib/redux/selectors';
+import siteColors from '../../lib/utils/siteColors';
 
 export default function Header() {
     const darkMode = useSelector(getDarkMode);

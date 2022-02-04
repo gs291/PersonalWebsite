@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-import Animator from "./Animator";
+import Animator from './Animator';
 
 const Background = styled.div`
   position: absolute;

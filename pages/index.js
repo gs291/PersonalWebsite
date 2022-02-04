@@ -1,12 +1,12 @@
-import {useSelector} from "react-redux";
-import {Container} from "@material-ui/core";
+import {useSelector} from 'react-redux';
+import {Container} from '@mui/material';
 
-import AboutMe from "../components/page/AboutMe";
-import siteColors from "../lib/utils/siteColors";
-import {getDarkMode} from "../lib/redux/selectors";
-import Projects from "../components/project/Projects";
-import TitleDivider from "../components/title/TitleDivider";
-import FixedDivider from "../components/divider/FixedDivider";
+import AboutMe from '../components/page/AboutMe';
+import siteColors from '../lib/utils/siteColors';
+import {getDarkMode} from '../lib/redux/selectors';
+import Projects from '../components/project/Projects';
+import TitleDivider from '../components/title/TitleDivider';
+import FixedDivider from '../components/divider/FixedDivider';
 
 export default function Home() {
     const darkMode = useSelector(getDarkMode);

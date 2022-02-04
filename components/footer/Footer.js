@@ -1,22 +1,22 @@
-import styled from "@emotion/styled";
-import {Link} from "@material-ui/core";
-import {useSelector} from "react-redux";
-import GitHubIcon from '@material-ui/icons/GitHub';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import InstagramIcon from '@material-ui/icons/Instagram';
+import {Link} from '@mui/material';
+import styled from '@emotion/styled';
+import {useSelector} from 'react-redux';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 
-import siteSizes from "../../lib/utils/siteSizes";
-import siteColors from "../../lib/utils/siteColors";
-import {getDarkMode} from "../../lib/redux/selectors";
+import siteSizes from '../../lib/utils/siteSizes';
+import siteColors from '../../lib/utils/siteColors';
+import {getDarkMode} from '../../lib/redux/selectors';
 
 const FooterContainer = styled.footer`
   display: flex;
   flex-direction: row;
   height: ${siteSizes.footer.height};
-  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
-  background-color: ${props => props["data-dm"] ? siteColors.background.main.dark :  siteColors.background.main.light};
+  color: ${props => props['data-dm'] ? siteColors.text.dark : siteColors.text.light};
+  background-color: ${props => props['data-dm'] ? siteColors.background.main.dark :  siteColors.background.main.light};
 `;
 
 const SocialMedia = styled(Link)`
@@ -27,12 +27,12 @@ const SocialMedia = styled(Link)`
   margin-bottom: 20px;
 
   border-radius: 20%;
-  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
+  color: ${props => props['data-dm'] ? siteColors.text.dark : siteColors.text.light};
   transition: 0.3s;
 
   &:hover {
-    background-color: ${props => props["data-dm"] ? siteColors.background.border.dark : siteColors.background.border.light};
-    color: ${props => props["data-dm"] ? siteColors.text.light : siteColors.text.dark};
+    background-color: ${props => props['data-dm'] ? siteColors.background.border.dark : siteColors.background.border.light};
+    color: ${props => props['data-dm'] ? siteColors.text.light : siteColors.text.dark};
   }
 `;
 

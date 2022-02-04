@@ -1,14 +1,14 @@
-import styled from "@emotion/styled";
-import {Divider} from "@material-ui/core";
+import styled from '@emotion/styled';
+import {Divider} from '@mui/material';
 
-import siteColors from "../../lib/utils/siteColors";
+import siteColors from '../../lib/utils/siteColors';
 
 const FDivider = styled(Divider)`
-  width: ${props => props["data-w"]}%;
+  width: ${props => props['data-w']}%;
   margin-bottom: 30px;
   transition: 0.3s;
 
-  background-color: ${props => props["data-bc"] ? props["data-bc"] : siteColors.text.dark};
+  background-color: ${props => props['data-bc'] ? props['data-bc'] : siteColors.text.dark};
 `;
 
 export default function FixedDivider({className, width, backgroundColor}) {

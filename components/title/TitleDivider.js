@@ -1,15 +1,15 @@
-import styled from "@emotion/styled";
-import {useSelector} from "react-redux";
-import {Typography} from "@material-ui/core";
+import styled from '@emotion/styled';
+import {useSelector} from 'react-redux';
+import {Typography} from '@mui/material';
 
-import FixedDivider from "../divider/FixedDivider";
-import siteColors from "../../lib/utils/siteColors";
-import {getDarkMode} from "../../lib/redux/selectors";
+import FixedDivider from '../divider/FixedDivider';
+import siteColors from '../../lib/utils/siteColors';
+import {getDarkMode} from '../../lib/redux/selectors';
 
 const Text = styled(Typography)`
   width: max-content;
-  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
-  border-bottom: 6px solid ${props => props["data-dm"] ? siteColors.background.border.dark : siteColors.background.border.light};
+  color: ${props => props['data-dm'] ? siteColors.text.dark : siteColors.text.light};
+  border-bottom: 6px solid ${props => props['data-dm'] ? siteColors.background.border.dark : siteColors.background.border.light};
   transition: 0.3s;
 `;
 
