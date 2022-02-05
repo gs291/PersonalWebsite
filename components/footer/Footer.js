@@ -1,12 +1,10 @@
 import {Link} from '@mui/material';
-import {useSelector} from 'react-redux';
 import {styled} from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-import {getDarkMode} from '../../lib/redux/selectors';
 
 const FooterContainer = styled('footer')`
   display: flex;
@@ -58,35 +56,30 @@ const GH = styled(GitHubIcon)`
 `;
 
 export default function Footer({ className }) {
-    const darkMode = useSelector(getDarkMode);
 
     return (
-        <FooterContainer className={className} data-dm={darkMode}>
+        <FooterContainer className={className}>
             <SocialMedia
                 color="inherit"
                 href="https://twitter.com/GS_291"
-                data-dm={darkMode}
             >
                 <TW />
             </SocialMedia>
             <SocialMedia
                 color="inherit"
                 href="https://www.instagram.com/gregory_sanchez/"
-                data-dm={darkMode}
             >
                 <INS />
             </SocialMedia>
             <SocialMedia
                 color="inherit"
                 href="https://www.linkedin.com/in/gregory-sanchez-05b211159"
-                data-dm={darkMode}
             >
                 <LN />
             </SocialMedia>
             <SmallGHLink
                 color="inherit"
                 href="https://github.com/gs291"
-                data-dm={darkMode}
             >
                 <GH />
             </SmallGHLink>

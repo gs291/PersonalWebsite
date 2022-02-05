@@ -2,9 +2,10 @@ import {Paper} from "@mui/material";
 import {useSelector} from 'react-redux';
 import {styled} from '@mui/material/styles';
 
-import {getDarkMode, getMobile} from '../../lib/redux/selectors';
+import {getMobile} from '../../lib/redux/selectors';
+import {globalOptions} from '../../lib/utils/emotionStyled';
 
-const Info = styled(Paper)`
+const Info = styled(Paper, globalOptions)`
   width: ${props => props['data-m'] ? 95 : 80}%;
   padding: 3em ${props => props['data-m'] ? 0.5 : 2}em;
   border-radius: 20px;
@@ -29,12 +30,11 @@ const InfoContainer = styled('div')`
 
 export default function PageInfo({ className, children }) {
     const mobile = useSelector(getMobile);
-    const darkMode = useSelector(getDarkMode);
 
     return (
         <>
             <InfoContainer className={className}>
-                <Info data-dm={darkMode} data-m={mobile}>
+                <Info data-m={mobile}>
                     {children}
                 </Info>
             </InfoContainer>

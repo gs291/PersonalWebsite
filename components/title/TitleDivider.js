@@ -1,9 +1,7 @@
-import {useSelector} from 'react-redux';
 import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
 
 import FixedDivider from '../divider/FixedDivider';
-import {getDarkMode} from '../../lib/redux/selectors';
 
 const Text = styled(Typography)`
   width: max-content;
@@ -18,12 +16,11 @@ const TextContainer = styled('div')`
 `;
 
 export default function TitleDivider({className, title}) {
-    const darkMode = useSelector(getDarkMode);
 
     return (
         <>
             <TextContainer className={className}>
-                <Text variant="h2" data-dm={darkMode}>
+                <Text variant="h2">
                     {title}
                 </Text>
             </TextContainer>

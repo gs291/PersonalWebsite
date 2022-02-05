@@ -1,7 +1,9 @@
 import {Divider} from '@mui/material';
 import {styled} from '@mui/material/styles';
 
-const FDivider = styled(Divider)`
+import {globalOptions} from '../../lib/utils/emotionStyled';
+
+const FDivider = styled(Divider, globalOptions)`
   width: ${props => props['data-w']}%;
   margin-bottom: 30px;
   transition: 0.3s;

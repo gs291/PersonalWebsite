@@ -1,13 +1,12 @@
 import {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import {styled} from '@mui/material/styles';
 import {useMediaQuery} from '@mui/material';
-import {useDispatch, useSelector} from 'react-redux';
 
 import Header from './Header';
 import Footer from '../footer/Footer';
 import Introduction from './Introduction';
 import {updateMobile} from '../../lib/redux/actions';
-import {getDarkMode} from '../../lib/redux/selectors';
 
 const PageContainer = styled('div')`
   display: flex;
@@ -38,7 +37,6 @@ const Intro = styled(Introduction)`
 
 export default function Page(props) {
     const dispatch = useDispatch();
-    const darkMode = useSelector(getDarkMode);
     const screen = useMediaQuery('(max-width: 960px)');
 
     useEffect(() => {
@@ -50,7 +48,7 @@ export default function Page(props) {
             <Header />
             <PageContainer>
                 <Intro />
-                <Main data-dm={darkMode}>
+                <Main>
                     {props.children}
                 </Main>
                 <Foot />

@@ -3,8 +3,9 @@ import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
 
 import DarkMode from './DarkMode';
+import {getMobile} from '../../lib/redux/selectors';
+import {globalOptions} from '../../lib/utils/emotionStyled';
 import SplashBackground from '../background/SplashBackground';
-import {getDarkMode, getMobile} from '../../lib/redux/selectors';
 
 const IntroductionContainer = styled('header')`
   background-color: ${props => props.theme.palette.background.default};
@@ -13,14 +14,14 @@ const IntroductionContainer = styled('header')`
   
 `;
 
-const DarkModeContainer = styled('div')`
+const DarkModeContainer = styled('div', globalOptions)`
   position: absolute;
   z-index: 0;
   bottom: 0;
   right: ${props => props['data-m'] ? 10 : 30}vw;
 `;
 
-const TextContainer = styled('div')`
+const TextContainer = styled('div', globalOptions)`
   z-index: 0;
   display: flex;
   flex-direction: column;
@@ -39,11 +40,10 @@ const TextContainer = styled('div')`
 
 export default function Introduction({className}) {
     const mobile = useSelector(getMobile);
-    const darkMode = useSelector(getDarkMode);
 
     return (
         <>
-            <IntroductionContainer className={className} data-dm={darkMode}>
+            <IntroductionContainer className={className}>
                 <SplashBackground />
                 <TextContainer data-m={mobile}>
                     {mobile ? (
