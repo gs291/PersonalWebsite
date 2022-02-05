@@ -1,11 +1,11 @@
-import styled from '@emotion/styled';
 import {useSelector} from 'react-redux';
 import {Typography} from '@mui/material';
+import {styled} from '@mui/material/styles';
 
 import siteColors from '../../lib/utils/siteColors';
 import {getDarkMode, getMobile} from '../../lib/redux/selectors';
 
-const ProjectContainer = styled.div`
+const ProjectContainer = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;

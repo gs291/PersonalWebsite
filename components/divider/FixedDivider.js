@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import {Divider} from '@mui/material';
+import {styled} from '@mui/material/styles';
 
 import siteColors from '../../lib/utils/siteColors';
 

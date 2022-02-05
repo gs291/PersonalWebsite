@@ -1,6 +1,6 @@
 import {Link} from '@mui/material';
-import styled from '@emotion/styled';
 import {useSelector} from 'react-redux';
+import {styled} from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -11,7 +11,7 @@ import siteSizes from '../../lib/utils/siteSizes';
 import siteColors from '../../lib/utils/siteColors';
 import {getDarkMode} from '../../lib/redux/selectors';
 
-const FooterContainer = styled.footer`
+const FooterContainer = styled('footer')`
   display: flex;
   flex-direction: row;
   height: ${siteSizes.footer.height};

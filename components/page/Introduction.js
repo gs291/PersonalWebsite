@@ -1,13 +1,13 @@
-import styled from '@emotion/styled';
 import {useSelector} from 'react-redux';
 import {Typography} from '@mui/material';
+import {styled} from '@mui/material/styles';
 
 import DarkMode from './DarkMode';
 import siteColors from '../../lib/utils/siteColors';
 import SplashBackground from '../background/SplashBackground';
 import {getDarkMode, getMobile} from '../../lib/redux/selectors';
 
-const IntroductionContainer = styled.header`
+const IntroductionContainer = styled('header')`
   color: ${props => props['data-dm'] ? siteColors.text.dark : siteColors.text.light};
   background-color: ${props => props['data-dm'] ? siteColors.background.main.dark : siteColors.background.main.light};
   min-height: 90vh;
@@ -15,14 +15,14 @@ const IntroductionContainer = styled.header`
   
 `;
 
-const DarkModeContainer = styled.div`
+const DarkModeContainer = styled('div')`
   position: absolute;
   z-index: 0;
   bottom: 0;
   right: ${props => props['data-m'] ? 10 : 30}vw;
 `;
 
-const TextContainer = styled.div`
+const TextContainer = styled('div')`
   z-index: 0;
   display: flex;
   flex-direction: column;

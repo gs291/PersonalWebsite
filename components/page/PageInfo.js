@@ -2,7 +2,6 @@ import {Paper} from "@mui/material";
 import {useSelector} from 'react-redux';
 import {styled} from '@mui/material/styles';
 
-import siteColors from '../../lib/utils/siteColors';
 import {getDarkMode, getMobile} from '../../lib/redux/selectors';
 
 const Info = styled(Paper)`
@@ -11,14 +10,15 @@ const Info = styled(Paper)`
   border-radius: 20px;
   transition: 0.3s;
 
-  filter: drop-shadow(5px 5px 5px ${props => props['data-dm'] ? siteColors.background.card.shadow.dark : siteColors.background.card.shadow.light});
+  filter: drop-shadow(5px 5px 5px ${props => props.theme.palette.shadow.main});
 
   &:hover,
   &:active,
   &:focus {
-    filter: drop-shadow(10px 10px 5px ${props => props['data-dm'] ? siteColors.background.card.shadow.dark : siteColors.background.card.shadow.light});
+    filter: drop-shadow(10px 10px 5px ${props => props.theme.palette.shadow.main});
   }
 `;
+
 
 const InfoContainer = styled('div')`
   display: flex;

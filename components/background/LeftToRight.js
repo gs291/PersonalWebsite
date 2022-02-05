@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
+import {styled} from '@mui/material/styles';
 
-const LeftToRightAnimation  = styled.div`
+const LeftToRightAnimation  = styled('div')`
   @keyframes scrollingLeft{
     from{
       height: 80px;

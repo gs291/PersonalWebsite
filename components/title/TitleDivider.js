@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
 import {useSelector} from 'react-redux';
 import {Typography} from '@mui/material';
+import {styled} from '@mui/material/styles';
 
 import FixedDivider from '../divider/FixedDivider';
 import siteColors from '../../lib/utils/siteColors';
@@ -13,7 +13,7 @@ const Text = styled(Typography)`
   transition: 0.3s;
 `;
 
-const TextContainer = styled.div`
+const TextContainer = styled('div')`
   width: 100%;
   text-align: left;
   margin-top: 30px;

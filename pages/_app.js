@@ -1,11 +1,9 @@
 import {Provider} from 'react-redux';
-import {CssBaseline} from '@mui/material';
 import {Global, css} from '@emotion/react';
-import {ThemeProvider, StyledEngineProvider} from '@mui/material/styles';
+import {StyledEngineProvider} from '@mui/material/styles';
 
 import store from '../lib/redux/store';
-import Page from '../components/page/Page';
-import {themeOptionsDark, themeOptionsLight} from '../lib/utils/theme';
+import AppContainer from '../components/page/AppContainer';
 
 const globals = css`
   html, 
@@ -42,17 +40,12 @@ const globals = css`
 
 export default function App({ Component, pageProps }) {
 
-  return (
-      <Provider store={store}>
-          <Global styles={globals} />
-          <StyledEngineProvider injectFirst>
-              <ThemeProvider theme={store.getState().darkMode ? themeOptionsDark : themeOptionsLight}>
-                  <CssBaseline />
-                  <Page>
-                      <Component {...pageProps} />
-                  </Page>
-              </ThemeProvider>
-          </StyledEngineProvider>
-      </Provider>
-  );
+    return (
+        <Provider store={store}>
+            <Global styles={globals} />
+            <StyledEngineProvider injectFirst>
+                <AppContainer pageProps={pageProps} Component={Component} />
+            </StyledEngineProvider>
+        </Provider>
+    );
 }

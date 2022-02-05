@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import {styled} from '@mui/material/styles';
 import {Button, Tooltip} from '@mui/material';
 import {useDispatch, useSelector} from 'react-redux';
 import WbIncandescentIcon from '@mui/icons-material/WbIncandescent';

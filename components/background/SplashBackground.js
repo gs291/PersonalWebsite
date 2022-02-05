@@ -1,8 +1,8 @@
-import styled from '@emotion/styled';
+import {styled} from '@mui/material/styles';
 
 import Animator from './Animator';
 
-const Background = styled.div`
+const Background = styled('div')`
   position: absolute;
   width: 100%;
   height: 100%;

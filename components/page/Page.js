@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import styled from '@emotion/styled';
+import {styled} from '@mui/material/styles';
 import {useMediaQuery} from '@mui/material';
 import {useDispatch, useSelector} from 'react-redux';
 
@@ -10,7 +10,7 @@ import siteColors from '../../lib/utils/siteColors';
 import {updateMobile} from '../../lib/redux/actions';
 import {getDarkMode, getMobile} from '../../lib/redux/selectors';
 
-const PageContainer = styled.div`
+const PageContainer = styled('div')`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -22,7 +22,7 @@ const Foot = styled(Footer)`
   transition: 0.3s;
 `;
 
-const Main = styled.main`
+const Main = styled('main')`
   flex: 1;
   background-color: ${props => props['data-dm'] ? siteColors.background.main.dark : siteColors.background.main.light};
   padding-bottom: 30px;
