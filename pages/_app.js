@@ -1,17 +1,17 @@
 import {Provider} from 'react-redux';
+import {CssBaseline} from '@mui/material';
 import {Global, css} from '@emotion/react';
-import {StyledEngineProvider} from '@mui/material/styles';
+import {ThemeProvider, StyledEngineProvider} from '@mui/material/styles';
 
 import store from '../lib/redux/store';
 import Page from '../components/page/Page';
-import {fontFamily} from '../lib/utils/utils';
+import {themeOptionsDark, themeOptionsLight} from '../lib/utils/theme';
 
 const globals = css`
   html, 
   body {
     padding: 0;
     margin: 0;
-    font-family: ${fontFamily};
   }
   
   a {
@@ -46,9 +46,12 @@ export default function App({ Component, pageProps }) {
       <Provider store={store}>
           <Global styles={globals} />
           <StyledEngineProvider injectFirst>
-              <Page>
-                  <Component {...pageProps} />
-              </Page>
+              <ThemeProvider theme={store.getState().darkMode ? themeOptionsDark : themeOptionsLight}>
+                  <CssBaseline />
+                  <Page>
+                      <Component {...pageProps} />
+                  </Page>
+              </ThemeProvider>
           </StyledEngineProvider>
       </Provider>
   );
