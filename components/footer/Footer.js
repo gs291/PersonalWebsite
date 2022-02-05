@@ -6,17 +6,12 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-
-import siteSizes from '../../lib/utils/siteSizes';
-import siteColors from '../../lib/utils/siteColors';
 import {getDarkMode} from '../../lib/redux/selectors';
 
 const FooterContainer = styled('footer')`
   display: flex;
   flex-direction: row;
-  height: ${siteSizes.footer.height};
-  color: ${props => props['data-dm'] ? siteColors.text.dark : siteColors.text.light};
-  background-color: ${props => props['data-dm'] ? siteColors.background.main.dark :  siteColors.background.main.light};
+  height: 70px;
 `;
 
 const SocialMedia = styled(Link)`
@@ -27,12 +22,11 @@ const SocialMedia = styled(Link)`
   margin-bottom: 20px;
 
   border-radius: 20%;
-  color: ${props => props['data-dm'] ? siteColors.text.dark : siteColors.text.light};
   transition: 0.3s;
 
   &:hover {
-    background-color: ${props => props['data-dm'] ? siteColors.background.border.dark : siteColors.background.border.light};
-    color: ${props => props['data-dm'] ? siteColors.text.light : siteColors.text.dark};
+    background-color: ${props => props.theme.palette.border.main};
+    color: ${props => props.theme.palette.textOpposite.primary};
   }
 `;
 

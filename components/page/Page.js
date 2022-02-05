@@ -6,9 +6,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import Header from './Header';
 import Footer from '../footer/Footer';
 import Introduction from './Introduction';
-import siteColors from '../../lib/utils/siteColors';
 import {updateMobile} from '../../lib/redux/actions';
-import {getDarkMode, getMobile} from '../../lib/redux/selectors';
+import {getDarkMode} from '../../lib/redux/selectors';
 
 const PageContainer = styled('div')`
   display: flex;
@@ -24,7 +23,7 @@ const Foot = styled(Footer)`
 
 const Main = styled('main')`
   flex: 1;
-  background-color: ${props => props['data-dm'] ? siteColors.background.main.dark : siteColors.background.main.light};
+  background-color: ${props => props.theme.palette.background.default};
   padding-bottom: 30px;
   
   display: flex;

@@ -3,13 +3,11 @@ import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
 
 import FixedDivider from '../divider/FixedDivider';
-import siteColors from '../../lib/utils/siteColors';
 import {getDarkMode} from '../../lib/redux/selectors';
 
 const Text = styled(Typography)`
   width: max-content;
-  color: ${props => props['data-dm'] ? siteColors.text.dark : siteColors.text.light};
-  border-bottom: 6px solid ${props => props['data-dm'] ? siteColors.background.border.dark : siteColors.background.border.light};
+  border-bottom: 6px solid ${props => props.theme.palette.border.main};
   transition: 0.3s;
 `;
 
@@ -29,7 +27,7 @@ export default function TitleDivider({className, title}) {
                     {title}
                 </Text>
             </TextContainer>
-            <FixedDivider width={100} backgroundColor={darkMode ? siteColors.background.divider.dark : siteColors.background.divider.light}/>
+            <FixedDivider width={100} />
         </>
     );
 }

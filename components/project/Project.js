@@ -2,19 +2,17 @@ import {useSelector} from 'react-redux';
 import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
 
-import siteColors from '../../lib/utils/siteColors';
 import {getDarkMode, getMobile} from '../../lib/redux/selectors';
 
 const ProjectContainer = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${props => props['data-dm'] ? siteColors.text.dark : siteColors.text.light};
 `;
 
 const Text = styled(Typography)`
   width: max-content;
-  border-bottom: 6px solid ${props => props['data-dm'] ? siteColors.background.border.dark : siteColors.background.border.light};
+  border-bottom: 6px solid ${props => props.theme.palette.border.main};
 `;
 
 const Title = styled(Text)`
