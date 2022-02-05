@@ -15,7 +15,7 @@ const DarkModeButton = styled(Button)`
   
   &:hover {
     background-color: ${props => props.theme.palette.hover.main};
-  }
+  } 
   
   & .MuiSvgIcon-root {
     width: 2em;
