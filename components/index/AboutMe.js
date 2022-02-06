@@ -1,6 +1,6 @@
 import {Typography} from '@mui/material';
 
-import PageInfo from './PageInfo';
+import PageInfo from "../page/PageInfo";
 
 export default function AboutMe() {
     return (

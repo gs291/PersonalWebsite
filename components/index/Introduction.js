@@ -2,7 +2,7 @@ import {useSelector} from 'react-redux';
 import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
 
-import DarkMode from './DarkMode';
+import DarkMode from "../dark-mode/DarkMode";
 import {getMobile} from '../../lib/redux/selectors';
 import {globalOptions} from '../../lib/utils/emotionStyled';
 import SplashBackground from '../background/SplashBackground';
