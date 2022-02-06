@@ -7,7 +7,7 @@ import {globalOptions} from '../../lib/utils/emotionStyled';
 
 const Info = styled(Paper, globalOptions)`
   width: ${props => props['data-m'] ? 95 : 80}%;
-  padding: 3em ${props => props['data-m'] ? 0.5 : 2}em;
+  padding: 3em ${props => props['data-m'] ? 1 : 2}em;
   border-radius: 20px;
   transition: 0.3s;
 

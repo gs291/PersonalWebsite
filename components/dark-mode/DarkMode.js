@@ -1,10 +1,11 @@
 import {css} from '@emotion/react';
 import {styled} from '@mui/material/styles';
-import {Button, Paper, Tooltip} from '@mui/material';
+import {Button, Paper} from '@mui/material';
 import {useDispatch, useSelector} from 'react-redux';
 import WbIncandescentIcon from '@mui/icons-material/WbIncandescent';
 import WbIncandescentOutlinedIcon from '@mui/icons-material/WbIncandescentOutlined';
 
+import Tooltip from '../tooltip/Tooltip';
 import {getDarkMode} from '../../lib/redux/selectors';
 import {toggleDarkMode} from '../../lib/redux/actions';
 
@@ -37,25 +38,18 @@ export default function DarkMode() {
 
     return (
         <>
-            <Tooltip
-                title={darkMode ? 'Enable Light Mode' : 'Enable Dark Mode'}
-                placement="top"
-                arrow
-                disableInteractive
-            >
-                <div>
-                    <Background>
-                        <DarkModeButton
-                            onClick={() => dispatch(toggleDarkMode())}
-                        >
-                            {darkMode ? (
-                                <LightOn />
-                            ) : (
-                                <LightOff />
-                            )}
-                        </DarkModeButton>
-                    </Background>
-                </div>
+            <Tooltip title={darkMode ? 'Enable Light Mode' : 'Enable Dark Mode'} >
+                <Background>
+                    <DarkModeButton
+                        onClick={() => dispatch(toggleDarkMode())}
+                    >
+                        {darkMode ? (
+                            <LightOn />
+                        ) : (
+                            <LightOff />
+                        )}
+                    </DarkModeButton>
+                </Background>
             </Tooltip>
         </>
     );
