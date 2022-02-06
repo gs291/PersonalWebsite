@@ -4,15 +4,15 @@ import {ThemeProvider} from '@mui/material/styles';
 
 
 import Page from './Page';
+import getThemeOptions from "../../lib/utils/theme";
 import {getDarkMode} from '../../lib/redux/selectors';
-import {themeOptionsDark, themeOptionsLight} from '../../lib/utils/theme';
 
 export default function AppContainer({Component, pageProps}) {
     const darkMode = useSelector(getDarkMode);
     
     return (
         <>
-            <ThemeProvider theme={darkMode ? themeOptionsDark : themeOptionsLight}>
+            <ThemeProvider theme={getThemeOptions(darkMode)}>
                 <CssBaseline />
                 <Page>
                     <Component {...pageProps} />
