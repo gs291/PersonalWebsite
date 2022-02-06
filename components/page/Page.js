@@ -1,7 +1,8 @@
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
+import {Global, css} from '@emotion/react';
 import {styled} from '@mui/material/styles';
-import {useMediaQuery} from '@mui/material';
+import {useMediaQuery, useTheme} from '@mui/material';
 
 import Header from './Header';
 import Footer from '../footer/Footer';
@@ -36,15 +37,40 @@ const Intro = styled(Introduction)`
 `;
 
 export default function Page(props) {
+    const theme = useTheme();
+
     const dispatch = useDispatch();
+
     const screen = useMediaQuery('(max-width: 960px)');
 
     useEffect(() => {
         dispatch(updateMobile(screen));
     }, [screen]);
 
+    const globals = css`
+      ::-webkit-scrollbar {
+        width: 10px;
+        background: ${theme.palette.background.default};
+      }
+    
+      ::-webkit-scrollbar-track {
+        background-color: ${theme.palette.background.default};
+        border-radius: 20px;
+      }
+    
+      ::-webkit-scrollbar-thumb {
+        background-color: ${theme.palette.primary.main};
+        border-radius: 20px;
+      }
+    
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: ${theme.palette.scrollbar.hover};
+      }
+    `;
+
     return (
         <>
+            <Global styles={globals} />
             <Header />
             <PageContainer>
                 <Intro />
