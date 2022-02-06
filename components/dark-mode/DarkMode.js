@@ -1,5 +1,6 @@
+import {css} from '@emotion/react';
 import {styled} from '@mui/material/styles';
-import {Button, Tooltip} from '@mui/material';
+import {Button, Paper, Tooltip} from '@mui/material';
 import {useDispatch, useSelector} from 'react-redux';
 import WbIncandescentIcon from '@mui/icons-material/WbIncandescent';
 import WbIncandescentOutlinedIcon from '@mui/icons-material/WbIncandescentOutlined';
@@ -7,41 +8,53 @@ import WbIncandescentOutlinedIcon from '@mui/icons-material/WbIncandescentOutlin
 import {getDarkMode} from '../../lib/redux/selectors';
 import {toggleDarkMode} from '../../lib/redux/actions';
 
+const Background = styled(Paper)`
+  transition: 0.3s;
+  
+  &:hover {
+    background-color: ${props => props.theme.palette.hover.main};
+  }
+`;
+
 const DarkModeButton = styled(Button)`
   padding: 0;
   width: 64px;
   height: 64px;
-  background-color: ${props => props.theme.palette.background.paper};
-  
-  &:hover {
-    background-color: ${props => props.theme.palette.hover.main};
-  } 
-  
-  & .MuiSvgIcon-root {
-    width: 2em;
-    height: 2em;
-  }
 `;
 
+const iconSize = css`
+  width: 2em;
+  height: 2em;
+`;
 
-export default function DarkMode({className}) {
+const LightOn = styled(WbIncandescentIcon)`${iconSize}`;
+const LightOff = styled(WbIncandescentOutlinedIcon)`${iconSize}`;
+
+
+export default function DarkMode() {
     const dispatch = useDispatch();
     const darkMode = useSelector(getDarkMode);
 
     return (
         <>
-            <Tooltip title={darkMode ? 'Enable Light Mode' : 'Enable Dark Mode'} placement="top">
+            <Tooltip
+                title={darkMode ? 'Enable Light Mode' : 'Enable Dark Mode'}
+                placement="top"
+                arrow
+                disableInteractive
+            >
                 <div>
-                    <DarkModeButton
-                        onClick={() => dispatch(toggleDarkMode())}
-                        className={className}
-                    >
-                        {darkMode ? (
-                            <WbIncandescentIcon />
-                        ) : (
-                            <WbIncandescentOutlinedIcon />
-                        )}
-                    </DarkModeButton>
+                    <Background>
+                        <DarkModeButton
+                            onClick={() => dispatch(toggleDarkMode())}
+                        >
+                            {darkMode ? (
+                                <LightOn />
+                            ) : (
+                                <LightOff />
+                            )}
+                        </DarkModeButton>
+                    </Background>
                 </div>
             </Tooltip>
         </>
