@@ -1,6 +1,6 @@
 import {Container} from '@mui/material';
 
-import AboutMe from "../components/index/AboutMe";
+import AboutMe from '../components/index/AboutMe';
 import Projects from '../components/project/Projects';
 import TitleDivider from '../components/title/TitleDivider';
 import FixedDivider from '../components/divider/FixedDivider';

@@ -1,4 +1,4 @@
-import {Paper} from "@mui/material";
+import {Paper} from '@mui/material';
 import {useSelector} from 'react-redux';
 import {styled} from '@mui/material/styles';
 

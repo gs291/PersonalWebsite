@@ -5,7 +5,7 @@ import {useMediaQuery} from '@mui/material';
 
 import Header from './Header';
 import Footer from '../footer/Footer';
-import Introduction from "../index/Introduction";
+import Introduction from '../index/Introduction';
 import {updateMobile} from '../../lib/redux/actions';
 
 const PageContainer = styled('div')`
