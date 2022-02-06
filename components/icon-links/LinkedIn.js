@@ -10,11 +10,11 @@ const LN = styled(LinkedInIcon)`
   height: 100%;
 `;
 
-export default function Linkedin({href}) {
+export default function LinkedIn({href}) {
 
     return (
         <>
-            <Tooltip title="Linkedin">
+            <Tooltip title="LinkedIn">
                 <IconLink href={href}>
                     <LN />
                 </IconLink>
