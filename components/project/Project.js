@@ -3,11 +3,11 @@ import {Typography} from '@mui/material';
 import {styled, alpha} from '@mui/material/styles';
 import ScheduleIcon from '@mui/icons-material/Schedule';
 
-import {getMobile} from '../../lib/redux/selectors';
-import {globalOptions} from '../../lib/utils/emotionStyled';
-import Website from '../icon-links/Website';
 import GitHub from '../icon-links/GitHub';
 import Reddit from '../icon-links/Reddit';
+import Website from '../icon-links/Website';
+import {getMobile} from '../../lib/redux/selectors';
+import {globalOptions} from '../../lib/utils/emotionStyled';
 
 const ProjectContainer = styled('div')`
   display: flex;
