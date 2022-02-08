@@ -28,7 +28,7 @@ export default function Home() {
                     <AboutMe />
                 </IndexContainer>
                 <IndexContainer>
-                    <TitleDivider title="Experience"/>
+                    <TitleDivider title="Experiences"/>
                     <Experiences />
                 </IndexContainer>
                 <IndexContainer>
