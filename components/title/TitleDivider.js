@@ -29,7 +29,6 @@ const TitleContainer = styled('div')`
 const Text = styled(Typography)`
   width: max-content;
   border-bottom: 6px solid ${props => props.theme.palette.border.main};
-  transition: 0.3s;
 `;
 
 const TextContainer = styled('div', globalOptions)`
@@ -37,6 +36,7 @@ const TextContainer = styled('div', globalOptions)`
   width: 100%;
   text-align: left;
   
+  transition: 0.3s;
   background-color: ${props => props.theme.palette.background.default};
 `;
 
