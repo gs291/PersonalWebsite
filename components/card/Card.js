@@ -5,8 +5,9 @@ import {styled} from '@mui/material/styles';
 import {getMobile} from '../../lib/redux/selectors';
 import {globalOptions} from '../../lib/utils/emotionStyled';
 
+
 const Info = styled(Paper, globalOptions)`
-  width: ${props => props['data-m'] ? 95 : 80}%;
+  width: ${props => props['data-m'] ? 95 : 90}%;
   padding: 3em ${props => props['data-m'] ? 1 : 2}em;
   border-radius: 20px;
   transition: 0.3s;
@@ -19,7 +20,6 @@ const Info = styled(Paper, globalOptions)`
     filter: drop-shadow(10px 10px 5px ${props => props.theme.palette.shadow.main});
   }
 `;
-
 
 const InfoContainer = styled('div')`
   display: flex;
