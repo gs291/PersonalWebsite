@@ -1,18 +1,18 @@
 import {Typography} from '@mui/material';
 
-import PageInfo from "../page/PageInfo";
+import Card from "../card/Card";
 
 export default function AboutMe() {
     return (
         <>
-            <PageInfo>
+            <Card>
                 <Typography variant="h4">
                     Hello
                 </Typography>
                 <Typography variant="body1">
                     This is all about me and me and me.
                 </Typography>
-            </PageInfo>
+            </Card>
         </>
     );
 }

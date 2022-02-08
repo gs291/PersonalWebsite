@@ -28,7 +28,7 @@ const InfoContainer = styled('div')`
   align-items: center;
 `;
 
-export default function PageInfo({ className, children }) {
+export default function Card({ className, children }) {
     const mobile = useSelector(getMobile);
 
     return (
