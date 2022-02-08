@@ -1,28 +1,27 @@
-import styled from "@emotion/styled";
-import {useSelector} from "react-redux";
-import {Typography} from "@material-ui/core";
+import {useSelector} from 'react-redux';
+import {Typography} from '@mui/material';
+import {styled} from '@mui/material/styles';
 
-import siteColors from "../../lib/utils/siteColors";
-import SplashBackground from "../background/SplashBackground";
-import {getDarkMode, getMobile} from "../../lib/redux/selectors";
-import DarkMode from "./DarkMode";
+import DarkMode from "../dark-mode/DarkMode";
+import {getMobile} from '../../lib/redux/selectors';
+import {globalOptions} from '../../lib/utils/emotionStyled';
+import SplashBackground from '../background/SplashBackground';
 
-const IntroductionContainer = styled.header`
-  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
-  background-color: ${props => props["data-dm"] ? siteColors.background.main.dark : siteColors.background.main.light};
+const IntroductionContainer = styled('header')`
+  background-color: ${props => props.theme.palette.background.default};
   min-height: 90vh;
   position: relative;
   
 `;
 
-const DarkModeContainer = styled.div`
+const DarkModeContainer = styled('div', globalOptions)`
   position: absolute;
   z-index: 0;
   bottom: 0;
-  right: ${props => props["data-m"] ? 10 : 30}vw;
+  right: ${props => props['data-m'] ? 10 : 30}vw;
 `;
 
-const TextContainer = styled.div`
+const TextContainer = styled('div', globalOptions)`
   z-index: 0;
   display: flex;
   flex-direction: column;
@@ -33,7 +32,7 @@ const TextContainer = styled.div`
   
   width: 100%;
   height: 100%;
-  padding: 0 ${props => props["data-m"] ? 0 : "5%"};
+  padding: 0 ${props => props['data-m'] ? 0 : '5%'};
   padding-top: 5rem;
   transition: 0.3s;
 `;
@@ -41,11 +40,10 @@ const TextContainer = styled.div`
 
 export default function Introduction({className}) {
     const mobile = useSelector(getMobile);
-    const darkMode = useSelector(getDarkMode);
 
     return (
         <>
-            <IntroductionContainer className={className} data-dm={darkMode}>
+            <IntroductionContainer className={className}>
                 <SplashBackground />
                 <TextContainer data-m={mobile}>
                     {mobile ? (

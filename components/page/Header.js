@@ -1,13 +1,10 @@
-import Head from "next/head";
-import {useSelector} from "react-redux";
-
-import {getDarkMode} from "../../lib/redux/selectors";
-import siteColors from "../../lib/utils/siteColors";
+import Head from 'next/head';
+import {useTheme} from '@mui/material';
 
 export default function Header() {
-    const darkMode = useSelector(getDarkMode);
+    const theme = useTheme();
 
-    const barColor = darkMode ? siteColors.background.main.dark : siteColors.background.main.light;
+    const barColor = theme.palette.background.default;
     return (
         <>
             <Head>

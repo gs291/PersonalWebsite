@@ -1,16 +1,15 @@
-import {useEffect} from "react";
-import styled from "@emotion/styled";
-import {useMediaQuery} from "@material-ui/core";
-import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import {Global, css} from '@emotion/react';
+import {styled} from '@mui/material/styles';
+import {useMediaQuery, useTheme} from '@mui/material';
 
-import Header from "./Header";
-import Footer from "../footer/Footer";
-import Introduction from "./Introduction";
-import siteColors from "../../lib/utils/siteColors";
-import {updateMobile} from "../../lib/redux/actions";
-import {getDarkMode, getMobile} from "../../lib/redux/selectors";
+import Header from './Header';
+import Footer from '../footer/Footer';
+import Introduction from '../index/Introduction';
+import {updateMobile} from '../../lib/redux/actions';
 
-const PageContainer = styled.div`
+const PageContainer = styled('div')`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -22,9 +21,9 @@ const Foot = styled(Footer)`
   transition: 0.3s;
 `;
 
-const Main = styled.main`
+const Main = styled('main')`
   flex: 1;
-  background-color: ${props => props["data-dm"] ? siteColors.background.main.dark : siteColors.background.main.light};
+  background-color: ${props => props.theme.palette.background.default};
   padding-bottom: 30px;
   
   display: flex;
@@ -38,20 +37,44 @@ const Intro = styled(Introduction)`
 `;
 
 export default function Page(props) {
+    const theme = useTheme();
+
     const dispatch = useDispatch();
-    const darkMode = useSelector(getDarkMode);
+
     const screen = useMediaQuery('(max-width: 960px)');
 
     useEffect(() => {
         dispatch(updateMobile(screen));
     }, [screen]);
 
+    const globals = css`
+      ::-webkit-scrollbar {
+        width: 10px;
+        background: ${theme.palette.background.default};
+      }
+    
+      ::-webkit-scrollbar-track {
+        background-color: ${theme.palette.background.default};
+        border-radius: 20px;
+      }
+    
+      ::-webkit-scrollbar-thumb {
+        background-color: ${theme.palette.primary.main};
+        border-radius: 20px;
+      }
+    
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: ${theme.palette.scrollbar.hover};
+      }
+    `;
+
     return (
         <>
+            <Global styles={globals} />
             <Header />
             <PageContainer>
                 <Intro />
-                <Main data-dm={darkMode}>
+                <Main>
                     {props.children}
                 </Main>
                 <Foot />

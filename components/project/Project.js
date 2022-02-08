@@ -1,59 +1,68 @@
-import styled from "@emotion/styled";
-import {useSelector} from "react-redux";
-import {Typography} from "@material-ui/core";
+import {useSelector} from 'react-redux';
+import {Typography} from '@mui/material';
+import {styled} from '@mui/material/styles';
 
-import siteColors from "../../lib/utils/siteColors";
-import {getDarkMode, getMobile} from "../../lib/redux/selectors";
+import GitHub from '../icon-links/GitHub';
+import Reddit from '../icon-links/Reddit';
+import Website from '../icon-links/Website';
+import {getMobile} from '../../lib/redux/selectors';
+import CardDefaultInfo from '../card/CardDefaultInfo';
+import {globalOptions} from '../../lib/utils/emotionStyled';
 
-const ProjectContainer = styled.div`
+
+const ProjectContainer = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
-`;
-
-const Text = styled(Typography)`
-  width: max-content;
-  border-bottom: 6px solid ${props => props["data-dm"] ? siteColors.background.border.dark : siteColors.background.border.light};
-`;
-
-const Title = styled(Text)`
-  margin-bottom: 20px;
-`;
-
-const Description = styled(Typography)`
-  width: ${props => props.mobile ? 100 : 80}%;
-  text-align: center;
-  font-size: 1.25em;
-  color: ${props => props["data-dm"] ? "rgba(255, 255, 255, 0.5)" : "rgba(0, 0, 0, 0.5)"};
 `;
 
 const Detail = styled(Typography)`
   font-size: 1.25em;
 `;
 
+const LinksAndLanguages = styled('div', globalOptions)`
+  display: flex;
+  flex-direction: ${props => props['data-m'] ? 'column' : 'row'};
+  width: 100%;
+  
+  gap: ${props => props['data-m'] ? '20px' : '0'} 0;
+`;
+
+const SpacedFlex = styled('div', globalOptions)`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0 20px;
+  
+  width: ${props => props['data-m'] ? '100' : props['data-w']}%;
+`;
+
 export default function Project({project}) {
     const mobile = useSelector(getMobile);
-    const darkMode = useSelector(getDarkMode);
 
     return (
         <>
-            <ProjectContainer data-dm={darkMode}>
-                <Title variant="h3" data-dm={darkMode}>
-                    {project.name}
-                </Title>
-                <Description variant="body1" data-dm={darkMode} data-m={mobile}>
-                    {project.description}
-                </Description>
-                <ul>
-                    {project.details.map((detail, idx) => (
-                        <li key={idx}>
-                            <Detail variant="body2">
-                                {detail}
-                            </Detail>
-                        </li>
-                    ))}
-                </ul>
+            <ProjectContainer>
+                <CardDefaultInfo item={project} />
+
+                <LinksAndLanguages data-m={mobile}>
+                    <SpacedFlex data-w={30} data-m={mobile}>
+                        {project.locate !== undefined && (<Website href={project.locate} />)}
+                        {project.github !== undefined && (<GitHub href={project.github} />)}
+                        {project.reddit !== undefined && (<Reddit href={project.reddit} />)}
+                    </SpacedFlex>
+                    <SpacedFlex data-w={70} data-m={mobile}>
+                        {project.language.map((language, idx) => (
+                            <div key={idx}>
+                                <Detail variant="body2">
+                                    {language}
+                                </Detail>
+                            </div>
+                        ))}
+                    </SpacedFlex>
+                </LinksAndLanguages>
             </ProjectContainer>
         </>
     );

@@ -1,24 +1,40 @@
-import {useSelector} from "react-redux";
-import {Container} from "@material-ui/core";
+import {Container} from '@mui/material';
+import {styled} from '@mui/material/styles';
 
-import AboutMe from "../components/page/AboutMe";
-import siteColors from "../lib/utils/siteColors";
-import {getDarkMode} from "../lib/redux/selectors";
-import Projects from "../components/project/Projects";
-import TitleDivider from "../components/title/TitleDivider";
-import FixedDivider from "../components/divider/FixedDivider";
+import AboutMe from '../components/index/AboutMe';
+import Projects from '../components/project/Projects';
+import TitleDivider from '../components/title/TitleDivider';
+import FixedDivider from '../components/divider/FixedDivider';
+import Experiences from '../components/experience/Experiences';
+
+
+const IndexContainer = styled('div')`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+`;
 
 export default function Home() {
-    const darkMode = useSelector(getDarkMode);
 
     return (
         <>
-            <FixedDivider width={100} backgroundColor={darkMode ? siteColors.background.divider.dark : siteColors.background.divider.light}/>
+            <FixedDivider width={100} />
             <Container maxWidth="md">
-                <TitleDivider title="About Me"/>
-                <AboutMe />
-                <TitleDivider title="Projects"/>
-                <Projects />
+                <IndexContainer>
+                    <TitleDivider title="About Me"/>
+                    <AboutMe />
+                </IndexContainer>
+                <IndexContainer>
+                    <TitleDivider title="Experiences"/>
+                    <Experiences />
+                </IndexContainer>
+                <IndexContainer>
+                    <TitleDivider title="Projects"/>
+                    <Projects />
+                </IndexContainer>
             </Container>
         </>
     )

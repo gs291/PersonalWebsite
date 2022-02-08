@@ -1,22 +1,20 @@
-import styled from "@emotion/styled";
-import {Divider} from "@material-ui/core";
+import {Divider} from '@mui/material';
+import {styled} from '@mui/material/styles';
 
-import siteColors from "../../lib/utils/siteColors";
+import {globalOptions} from '../../lib/utils/emotionStyled';
 
-const FDivider = styled(Divider)`
-  width: ${props => props["data-w"]}%;
+const FDivider = styled(Divider, globalOptions)`
+  width: ${props => props['data-w']}%;
   margin-bottom: 30px;
   transition: 0.3s;
-
-  background-color: ${props => props["data-bc"] ? props["data-bc"] : siteColors.text.dark};
 `;
 
-export default function FixedDivider({className, width, backgroundColor}) {
+export default function FixedDivider({className, width}) {
     if (!width){ width = 100; }
 
     return (
       <>
-          <FDivider className={className} data-w={width} data-bc={backgroundColor}/>
+          <FDivider className={className} data-w={width}/>
       </>
     );
 }

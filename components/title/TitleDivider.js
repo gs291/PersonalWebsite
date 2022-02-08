@@ -1,35 +1,58 @@
-import styled from "@emotion/styled";
-import {useSelector} from "react-redux";
-import {Typography} from "@material-ui/core";
+import {useSelector} from 'react-redux';
+import {Typography} from '@mui/material';
+import {styled} from '@mui/material/styles';
 
-import FixedDivider from "../divider/FixedDivider";
-import siteColors from "../../lib/utils/siteColors";
-import {getDarkMode} from "../../lib/redux/selectors";
+import FixedDivider from '../divider/FixedDivider';
+import {getMobile} from '../../lib/redux/selectors';
+import {globalOptions} from '../../lib/utils/emotionStyled';
+
+
+const TitleContainer = styled('div')`
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-top: 30px;
+
+  @media only screen and (min-width: 961px) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 960px) {
+    width: calc(100% + 48px);
+  }
+  
+  @media only screen and (max-width: 600px) {
+    width: calc(100% + 32px);
+  } 
+`;
 
 const Text = styled(Typography)`
   width: max-content;
-  color: ${props => props["data-dm"] ? siteColors.text.dark : siteColors.text.light};
-  border-bottom: 6px solid ${props => props["data-dm"] ? siteColors.background.border.dark : siteColors.background.border.light};
+  border-bottom: 6px solid ${props => props.theme.palette.border.main};
   transition: 0.3s;
 `;
 
-const TextContainer = styled.div`
+const TextContainer = styled('div', globalOptions)`
+  padding-left: ${props => props['data-m'] ? '30px' : '0'};
   width: 100%;
   text-align: left;
-  margin-top: 30px;
+  
+  background-color: ${props => props.theme.palette.background.default};
 `;
 
 export default function TitleDivider({className, title}) {
-    const darkMode = useSelector(getDarkMode);
+    const mobile = useSelector(getMobile);
 
     return (
         <>
-            <TextContainer className={className}>
-                <Text variant="h2" data-dm={darkMode}>
-                    {title}
-                </Text>
-            </TextContainer>
-            <FixedDivider width={100} backgroundColor={darkMode ? siteColors.background.divider.dark : siteColors.background.divider.light}/>
+            <TitleContainer>
+                <TextContainer className={className} data-m={mobile}>
+                    <Text variant="h2">
+                        {title}
+                    </Text>
+                </TextContainer>
+                <FixedDivider width={100} />
+            </TitleContainer>
         </>
     );
 }
