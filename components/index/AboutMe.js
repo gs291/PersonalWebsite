@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {useSelector} from 'react-redux';
 import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
@@ -7,8 +8,29 @@ import GitHub from '../icon-links/GitHub';
 import Twitter from '../icon-links/Twitter';
 import LinkedIn from '../icon-links/LinkedIn';
 import Instagram from '../icon-links/Instagram';
+import profilePic from '../../public/about.jpg';
 import {getMobile} from '../../lib/redux/selectors';
 
+
+const ImageContainer = styled('div')`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin-bottom: 30px;
+`;
+
+const ImageWrapper = styled('div')`
+  position: relative;
+
+  width: 300px;
+  height: 300px;
+`;
+
+const StyledImage = styled(Image)`
+  object-fit: cover;
+  border-radius: 50%;
+`;
 
 const Title = styled(Typography)`
   margin-top: 30px;
@@ -38,6 +60,17 @@ export default function AboutMe() {
     return (
         <>
             <Card>
+                <ImageContainer>
+                    <ImageWrapper>
+                        <StyledImage
+                            src={profilePic}
+                            quality={100}
+                            alt="Picture of Gregory Sanchez"
+                            layout="fill"
+                            priority
+                        />
+                    </ImageWrapper>
+                </ImageContainer>
                 <Text variant="body1">
                     I'm a full stack web developer with 7 years of computer science experience!
                     I've worked and developed in many areas of Computer Science including program, web, android and hardware development.
