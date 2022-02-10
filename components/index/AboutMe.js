@@ -77,7 +77,7 @@ export default function AboutMe() {
                 </Text>
                 <Text variant="body1">
                     I was introduced to technology at a very early age.
-                    Since then I have been fond of technology which then led to my passion of software development.
+                    Since then I have been very fond of technology which then led to my passion of software development.
                 </Text>
 
                 <Title variant={mobile ? 'h6' : 'h5'}>
