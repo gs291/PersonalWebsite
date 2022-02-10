@@ -1,17 +1,52 @@
+import {useSelector} from 'react-redux';
 import {Typography} from '@mui/material';
+import {styled} from '@mui/material/styles';
 
 import Card from "../card/Card";
+import {getMobile} from '../../lib/redux/selectors';
+
+const Title = styled(Typography)`
+  margin-top: 30px;
+  margin-bottom: 10px;
+`;
+
+const Text = styled(Typography)`
+  font-size: 1.25em;
+  margin-bottom: 10px;
+`;
+
+const EducationText = styled(Typography)`
+  font-size: 1.15em;
+`;
 
 export default function AboutMe() {
+    const mobile = useSelector(getMobile);
+
     return (
         <>
             <Card>
-                <Typography variant="h4">
-                    Hello
-                </Typography>
-                <Typography variant="body1">
-                    This is all about me and me and me.
-                </Typography>
+                <Text variant="body1">
+                    I'm a full stack web developer with 7 years of computer science experience!
+                    I've worked and developed in many areas of Computer Science including program, web, android and hardware development.
+                </Text>
+                <Text variant="body1">
+                    I was introduced to technology at a very early age.
+                    Since then I have been fond of technology which then led to my passion of software development.
+                </Text>
+
+                <Title variant={mobile ? 'h6' : 'h5'}>
+                    Education
+                </Title>
+                <ul>
+                    <li>
+                        <EducationText variant="body1">
+                            B.S. Computer Science, Oregon State University (2016-2020)
+                        </EducationText>
+                        <EducationText variant="body1">
+                            Cumulative GPA: 3.85
+                        </EducationText>
+                    </li>
+                </ul>
             </Card>
         </>
     );

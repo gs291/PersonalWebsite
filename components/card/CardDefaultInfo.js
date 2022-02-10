@@ -42,8 +42,8 @@ const DateIcon = styled(ScheduleIcon)`
   margin-right: 5px;
 `;
 
-const Detail = styled(Typography)`
-  font-size: 1.25em;
+const Detail = styled(Typography, globalOptions)`
+  font-size: ${props => props['data-m'] ? '1.1' : '1.25'}rem;
 `;
 
 const DetailsList = styled('ul', globalOptions)`
@@ -75,7 +75,7 @@ export default function CardDefaultInfo({item}) {
             <DetailsList data-m={mobile}>
                 {item.details.map((detail, idx) => (
                     <DetailItem key={idx}>
-                        <Detail variant="body2">
+                        <Detail variant="body2" data-m={mobile}>
                             {detail}
                         </Detail>
                     </DetailItem>

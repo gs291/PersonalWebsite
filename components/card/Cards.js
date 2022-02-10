@@ -9,10 +9,11 @@ export default function Cards({children}) {
 
     return (
         <>
-            <Grid container
-                  spacing={mobile ? 4 : 6}
-                  direction="column"
-                  alignItems="center"
+            <Grid
+                container
+                spacing={mobile ? 6 : 12}
+                direction="column"
+                alignItems="center"
             >
                 {children}
             </Grid>
