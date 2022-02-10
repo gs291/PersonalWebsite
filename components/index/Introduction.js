@@ -46,21 +46,14 @@ export default function Introduction({className}) {
             <IntroductionContainer className={className}>
                 <SplashBackground />
                 <TextContainer data-m={mobile}>
-                    {mobile ? (
-                        <>
-                            <Typography variant="h2" component="h1">
-                                Hi!
-                            </Typography>
-                            <Typography variant="h2" component="h1">
-                                I'm Gregory Sanchez!
-                            </Typography>
-                        </>
-                    ) : (
-                        <Typography variant="h2" component="h1">
-                            Hi! I'm Gregory Sanchez!
-                        </Typography>
-                    )}
-                    <Typography variant="h5">
+                    <Typography variant={mobile ? 'h2' : 'h1'} component="h1">
+                        Hi!
+                    </Typography>
+                    <Typography variant={mobile ? 'h2' : 'h1'} component="h1">
+                        I'm Gregory Sanchez!
+                    </Typography>
+                    <br />
+                    <Typography variant={mobile ? 'h5' : 'h3'}>
                         A Full Stack Developer
                     </Typography>
                 </TextContainer>

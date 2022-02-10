@@ -15,6 +15,7 @@ const IndexContainer = styled('div')`
   align-items: center;
   
   width: 100%;
+  margin-bottom: 50px;
 `;
 
 export default function Home() {
@@ -22,13 +23,13 @@ export default function Home() {
     return (
         <>
             <FixedDivider width={100} />
-            <Container maxWidth="md">
+            <Container maxWidth="lg">
                 <IndexContainer>
                     <TitleDivider title="About Me"/>
                     <AboutMe />
                 </IndexContainer>
                 <IndexContainer>
-                    <TitleDivider title="Experiences"/>
+                    <TitleDivider title="Experience"/>
                     <Experiences />
                 </IndexContainer>
                 <IndexContainer>
