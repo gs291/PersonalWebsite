@@ -10,6 +10,7 @@ import LinkedIn from '../icon-links/LinkedIn';
 import Instagram from '../icon-links/Instagram';
 import profilePic from '../../public/about.jpg';
 import {getMobile} from '../../lib/redux/selectors';
+import PDF from '../icon-links/PDF';
 
 
 const ImageContainer = styled('div')`
@@ -49,7 +50,15 @@ const EducationText = styled(Typography)`
 const SocialsContainer = styled('div')`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 0 20px;
+  justify-content: center;
+  align-items: end;
+`;
+
+const PDFContainer = styled('div')`
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -98,6 +107,12 @@ export default function AboutMe() {
                     <Instagram href="https://www.instagram.com/gregory_sanchez/" />
                     <LinkedIn href="https://www.linkedin.com/in/gregory-sanchez-05b211159" />
                     <GitHub href="https://github.com/gs291" />
+                    <PDFContainer>
+                        <Typography variant="h6">
+                            Resume
+                        </Typography>
+                        <PDF href="gregory_sanchez_website_resume.pdf" />
+                    </PDFContainer>
                 </SocialsContainer>
             </Card>
         </>
