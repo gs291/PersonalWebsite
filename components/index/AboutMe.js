@@ -72,7 +72,7 @@ export default function AboutMe() {
                     </ImageWrapper>
                 </ImageContainer>
                 <Text variant="body1">
-                    I'm a full stack web developer with 7 years of computer science experience!
+                    I'm a full stack web developer with 7 years of Computer Science experience!
                     I've worked and developed in all areas of Computer Science including program, web, android and hardware development.
                 </Text>
                 <Text variant="body1">
