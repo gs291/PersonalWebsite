@@ -3,7 +3,12 @@ import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
 
 import Card from "../card/Card";
+import GitHub from '../icon-links/GitHub';
+import Twitter from '../icon-links/Twitter';
+import LinkedIn from '../icon-links/LinkedIn';
+import Instagram from '../icon-links/Instagram';
 import {getMobile} from '../../lib/redux/selectors';
+
 
 const Title = styled(Typography)`
   margin-top: 30px;
@@ -17,6 +22,14 @@ const Text = styled(Typography)`
 
 const EducationText = styled(Typography)`
   font-size: 1.15em;
+`;
+
+const SocialsContainer = styled('div')`
+  display: flex;
+  flex-direction: row;
+  gap: 0 20px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default function AboutMe() {
@@ -47,6 +60,12 @@ export default function AboutMe() {
                         </EducationText>
                     </li>
                 </ul>
+                <SocialsContainer>
+                    <Twitter href="https://twitter.com/GS_291" />
+                    <Instagram href="https://www.instagram.com/gregory_sanchez/" />
+                    <LinkedIn href="https://www.linkedin.com/in/gregory-sanchez-05b211159" />
+                    <GitHub href="https://github.com/gs291" />
+                </SocialsContainer>
             </Card>
         </>
     );
