@@ -1,9 +1,11 @@
 import {Provider} from 'react-redux';
 import {Global, css} from '@emotion/react';
 import {StyledEngineProvider} from '@mui/material/styles';
+import {PersistGate} from 'redux-persist/integration/react';
 
-import store from '../lib/redux/store';
+import configureStore from '../lib/redux/store';
 import AppContainer from '../components/page/AppContainer';
+
 
 const globals = css`
   html, 
@@ -22,14 +24,18 @@ const globals = css`
   }
 `;
 
+const store = configureStore();
+
 export default function App({ Component, pageProps }) {
 
     return (
         <Provider store={store}>
-            <Global styles={globals} />
-            <StyledEngineProvider injectFirst>
-                <AppContainer pageProps={pageProps} Component={Component} />
-            </StyledEngineProvider>
+            <PersistGate loading={null} persistor={store.__PERSISTOR}>
+                <Global styles={globals} />
+                <StyledEngineProvider injectFirst>
+                    <AppContainer pageProps={pageProps} Component={Component} />
+                </StyledEngineProvider>
+            </PersistGate>
         </Provider>
     );
 }
