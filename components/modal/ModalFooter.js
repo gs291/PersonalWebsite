@@ -4,6 +4,7 @@ import {styled} from '@mui/material/styles';
 import {Button, CircularProgress, Typography} from '@mui/material';
 
 import {globalOptions} from '../../lib/utils/emotionStyled';
+import {BUTTON_PREFIX, SELECT_CONTENT_BUTTON, ga4SendSelectContent} from '../../lib/utils/ga4';
 
 
 const FooterContainer = styled('div')`
@@ -26,6 +27,8 @@ const ErrorSuccessContainer = styled('div', globalOptions)`
   color: ${props => props['data-s'] ? 'green' : 'red'};
 `;
 
+const GA4_SUBMIT_MODAL_ID = "SUBMIT_MODAL";
+
 export default function ModalFooter({form, setForm, setErrors}) {
     const [progress, setProgress] = useState({
         isSuccess: false,
@@ -47,9 +50,18 @@ export default function ModalFooter({form, setForm, setErrors}) {
             || form.email === ''
             || form.email.indexOf('@') === -1
             || form.message === '') {
+            ga4SendSelectContent(SELECT_CONTENT_BUTTON, {
+                item_id: `${BUTTON_PREFIX}${GA4_SUBMIT_MODAL_ID}`,
+                errors: true
+            });
+
             return;
         }
-        console.log(form);
+
+        ga4SendSelectContent(SELECT_CONTENT_BUTTON, {
+            item_id: `${BUTTON_PREFIX}${GA4_SUBMIT_MODAL_ID}`,
+            errors: false
+        });
 
         setProgress({isLoading: true, isError: false, errorMessage: "", isSuccess: false});
         emailjs.send('gmail', 'contactme', form, 'user_r87lyqdfNcWvvEm845oeh')
