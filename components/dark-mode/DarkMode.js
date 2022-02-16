@@ -8,6 +8,7 @@ import WbIncandescentOutlinedIcon from '@mui/icons-material/WbIncandescentOutlin
 import Tooltip from '../tooltip/Tooltip';
 import {getDarkMode} from '../../lib/redux/selectors';
 import {toggleDarkMode} from '../../lib/redux/actions';
+import {BUTTON_PREFIX, SELECT_CONTENT_BUTTON, ga4SendSelectContent} from '../../lib/utils/ga4';
 
 const Background = styled(Paper)`
   transition: 0.3s;
@@ -31,18 +32,22 @@ const iconSize = css`
 const LightOn = styled(WbIncandescentIcon)`${iconSize}`;
 const LightOff = styled(WbIncandescentOutlinedIcon)`${iconSize}`;
 
+const GA4_DARK_MODE_ID = "DARK_MODE";
 
 export default function DarkMode() {
     const dispatch = useDispatch();
     const darkMode = useSelector(getDarkMode);
 
+    const changeDarkMode = () => {
+        dispatch(toggleDarkMode());
+        ga4SendSelectContent(SELECT_CONTENT_BUTTON, {item_id: `${BUTTON_PREFIX}${GA4_DARK_MODE_ID}`});
+    }
+
     return (
         <>
             <Tooltip title={darkMode ? 'Enable Light Mode' : 'Enable Dark Mode'} >
                 <Background>
-                    <DarkModeButton
-                        onClick={() => dispatch(toggleDarkMode())}
-                    >
+                    <DarkModeButton onClick={changeDarkMode}>
                         {darkMode ? (
                             <LightOn />
                         ) : (

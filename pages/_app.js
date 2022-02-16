@@ -1,8 +1,10 @@
+import {useEffect} from 'react';
 import {Provider} from 'react-redux';
 import {Global, css} from '@emotion/react';
 import {StyledEngineProvider} from '@mui/material/styles';
 import {PersistGate} from 'redux-persist/integration/react';
 
+import {ga4Initialize} from '../lib/utils/ga4';
 import configureStore from '../lib/redux/store';
 import AppContainer from '../components/page/AppContainer';
 
@@ -27,6 +29,10 @@ const globals = css`
 const store = configureStore();
 
 export default function App({ Component, pageProps }) {
+
+    useEffect(() => {
+        ga4Initialize();
+    }, []);
 
     return (
         <Provider store={store}>
