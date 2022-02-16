@@ -10,7 +10,7 @@ import {globalOptions} from '../../lib/utils/emotionStyled';
 const TitleContainer = styled('div')`
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 10;
   margin-top: 30px;
 
   @media only screen and (min-width: 961px) {
@@ -40,12 +40,12 @@ const TextContainer = styled('div', globalOptions)`
   background-color: ${props => props.theme.palette.background.default};
 `;
 
-export default function TitleDivider({className, title}) {
+export default function TitleDivider({className, title, ...rest}) {
     const mobile = useSelector(getMobile);
 
     return (
         <>
-            <TitleContainer>
+            <TitleContainer {...rest}>
                 <TextContainer className={className} data-m={mobile}>
                     <Text variant="h2">
                         {title}

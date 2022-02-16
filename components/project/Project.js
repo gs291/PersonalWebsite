@@ -54,7 +54,7 @@ export default function Project({project}) {
                         {project.reddit !== undefined && (<Reddit href={project.reddit} />)}
                     </SpacedFlex>
                     <SpacedFlex data-w={70} data-m={mobile}>
-                        {project.language.map((language, idx) => (
+                        {project.services.map((language, idx) => (
                             <div key={idx}>
                                 <Detail variant="body2">
                                     {language}

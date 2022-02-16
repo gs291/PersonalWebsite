@@ -8,6 +8,7 @@ import Header from './Header';
 import Footer from '../footer/Footer';
 import Introduction from '../index/Introduction';
 import {updateMobile} from '../../lib/redux/actions';
+import {ga4SendPageView} from '../../lib/utils/ga4';
 
 const PageContainer = styled('div')`
   display: flex;
@@ -46,6 +47,10 @@ export default function Page(props) {
     useEffect(() => {
         dispatch(updateMobile(screen));
     }, [screen]);
+
+    useEffect(() => {
+        ga4SendPageView();
+    }, []);
 
     const globals = css`
       ::-webkit-scrollbar {

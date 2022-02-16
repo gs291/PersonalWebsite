@@ -4,13 +4,14 @@ import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
 
 import Card from "../card/Card";
+import PDF from '../icon-links/PDF';
 import GitHub from '../icon-links/GitHub';
 import Twitter from '../icon-links/Twitter';
 import LinkedIn from '../icon-links/LinkedIn';
 import Instagram from '../icon-links/Instagram';
 import profilePic from '../../public/about.jpg';
 import {getMobile} from '../../lib/redux/selectors';
-import PDF from '../icon-links/PDF';
+import ContactMeButton from '../button/ContactMeButton';
 
 
 const ImageContainer = styled('div')`
@@ -63,7 +64,7 @@ const PDFContainer = styled('div')`
   align-items: center;
 `;
 
-export default function AboutMe() {
+export default function AboutMe({setOpenModal}) {
     const mobile = useSelector(getMobile);
 
     return (
@@ -81,8 +82,8 @@ export default function AboutMe() {
                     </ImageWrapper>
                 </ImageContainer>
                 <Text variant="body1">
-                    I'm a full stack web developer with 7 years of Computer Science experience!
-                    I've worked and developed in all areas of Computer Science including program, web, android and hardware development.
+                    I'm a full stack developer with 7 years of Computer Science experience!
+                    I've worked and developed in all areas of Computer Science including program, web, Android and hardware development.
                 </Text>
                 <Text variant="body1">
                     I was introduced to technology at a very early age.
@@ -102,6 +103,7 @@ export default function AboutMe() {
                         </EducationText>
                     </li>
                 </ul>
+                <ContactMeButton setOpenModal={setOpenModal}/>
                 <SocialsContainer>
                     <Twitter href="https://twitter.com/GS_291" />
                     <Instagram href="https://www.instagram.com/gregory_sanchez/" />

@@ -1,11 +1,14 @@
+import {useState} from 'react';
 import {Container} from '@mui/material';
 import {styled} from '@mui/material/styles';
 
 import AboutMe from '../components/index/AboutMe';
 import Projects from '../components/project/Projects';
+import Navigation from '../components/page/Navigation';
 import TitleDivider from '../components/title/TitleDivider';
 import FixedDivider from '../components/divider/FixedDivider';
 import Experiences from '../components/experience/Experiences';
+import ContactMeModal from '../components/modal/ContactMeModal';
 
 
 const IndexContainer = styled('div')`
@@ -19,24 +22,27 @@ const IndexContainer = styled('div')`
 `;
 
 export default function Home() {
+    const [openModal, setOpenModal] = useState(false);
 
     return (
         <>
             <FixedDivider width={100} />
+            <Navigation />
             <Container maxWidth="lg">
                 <IndexContainer>
-                    <TitleDivider title="About Me"/>
-                    <AboutMe />
+                    <TitleDivider title="About Me" id="about-me" />
+                    <AboutMe setOpenModal={setOpenModal}/>
                 </IndexContainer>
                 <IndexContainer>
-                    <TitleDivider title="Experience"/>
+                    <TitleDivider title="Experience" id="experience" />
                     <Experiences />
                 </IndexContainer>
                 <IndexContainer>
-                    <TitleDivider title="Projects"/>
+                    <TitleDivider title="Projects" id="projects" />
                     <Projects />
                 </IndexContainer>
             </Container>
+            <ContactMeModal open={openModal} setOpen={setOpenModal} />
         </>
     )
 }
