@@ -4,6 +4,7 @@ import {styled} from '@mui/material/styles';
 
 import AboutMe from '../components/index/AboutMe';
 import Projects from '../components/project/Projects';
+import Navigation from '../components/page/Navigation';
 import TitleDivider from '../components/title/TitleDivider';
 import FixedDivider from '../components/divider/FixedDivider';
 import Experiences from '../components/experience/Experiences';
@@ -26,17 +27,18 @@ export default function Home() {
     return (
         <>
             <FixedDivider width={100} />
+            <Navigation />
             <Container maxWidth="lg">
                 <IndexContainer>
-                    <TitleDivider title="About Me"/>
+                    <TitleDivider title="About Me" id="about-me" />
                     <AboutMe setOpenModal={setOpenModal}/>
                 </IndexContainer>
                 <IndexContainer>
-                    <TitleDivider title="Experience"/>
+                    <TitleDivider title="Experience" id="experience" />
                     <Experiences />
                 </IndexContainer>
                 <IndexContainer>
-                    <TitleDivider title="Projects"/>
+                    <TitleDivider title="Projects" id="projects" />
                     <Projects />
                 </IndexContainer>
             </Container>

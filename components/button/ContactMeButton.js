@@ -8,7 +8,7 @@ import {BUTTON_PREFIX, SELECT_CONTENT_BUTTON, ga4SendSelectContent} from '../../
 
 const ButtonContainer = styled('div')`
   width: 100%;
-  margin: 10px 0;
+  margin: 2em 0;
   
   display: flex;
   justify-content: center;
