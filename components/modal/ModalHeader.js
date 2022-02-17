@@ -26,10 +26,10 @@ const RightHeader = styled('div')`
 
 const GA4_CLOSE_MODAL_ID = "CLOSE_MODAL";
 
-export default function ModalHeader({setOpen}) {
+export default function ModalHeader({handleClose}) {
 
-    const handleClose = () => {
-        setOpen(false);
+    const handleClick = () => {
+        handleClose();
 
         ga4SendSelectContent(SELECT_CONTENT_BUTTON, {
             item_id: `${BUTTON_PREFIX}${GA4_CLOSE_MODAL_ID}`
@@ -47,7 +47,7 @@ export default function ModalHeader({setOpen}) {
                 <RightHeader>
                     <Button
                         variant="outlined"
-                        onClick={handleClose}
+                        onClick={handleClick}
                     >
                         <Close />
                     </Button>

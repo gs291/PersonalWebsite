@@ -26,7 +26,12 @@ export default function ContactMeModal({open, setOpen}) {
     const [form, setForm] = useState({"name": "", "email": "", "message": ""})
     const [errors, setErrors] = useState({"name": false, "email": false, "message": false})
 
-    const handleClose = () => setOpen(false);
+    const handleClose = () => {
+        setForm({"name": "", "email": "", "message": ""});
+        setErrors({"name": false, "email": false, "message": false});
+
+        setOpen(false);
+    };
 
     return (
         <>
@@ -35,7 +40,7 @@ export default function ContactMeModal({open, setOpen}) {
                 onClose={handleClose}
             >
                 <ModalContainer>
-                    <ModalHeader setOpen={setOpen} />
+                    <ModalHeader handleClose={handleClose} />
                     <ModalDivider />
                     <ModalBody errors={errors} form={form} setForm={setForm} />
                     <ModalDivider />
