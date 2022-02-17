@@ -1,5 +1,6 @@
 import {styled} from '@mui/material/styles';
 
+
 const LeftToRightAnimation  = styled('div')`
   @keyframes scrollingLeft{
     from{

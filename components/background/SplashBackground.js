@@ -2,6 +2,7 @@ import {styled} from '@mui/material/styles';
 
 import Animator from './Animator';
 
+
 const Background = styled('div')`
   position: absolute;
   width: 100%;

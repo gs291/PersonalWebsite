@@ -10,6 +10,7 @@ import {getDarkMode} from '../../lib/redux/selectors';
 import {toggleDarkMode} from '../../lib/redux/actions';
 import {BUTTON_PREFIX, SELECT_CONTENT_BUTTON, ga4SendSelectContent} from '../../lib/utils/ga4';
 
+
 const Background = styled(Paper)`
   transition: 0.3s;
   border-radius: 50%;

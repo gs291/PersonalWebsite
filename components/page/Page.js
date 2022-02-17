@@ -10,6 +10,7 @@ import Introduction from '../index/Introduction';
 import {updateMobile} from '../../lib/redux/actions';
 import {ga4SendPageView} from '../../lib/utils/ga4';
 
+
 const PageContainer = styled('div')`
   display: flex;
   min-height: 100vh;
