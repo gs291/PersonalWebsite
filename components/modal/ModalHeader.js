@@ -1,6 +1,6 @@
 import {Close} from '@mui/icons-material';
 import {styled} from '@mui/material/styles';
-import {Button, Divider, Typography} from '@mui/material';
+import {Button, Typography} from '@mui/material';
 import {BUTTON_PREFIX, SELECT_CONTENT_BUTTON, ga4SendSelectContent} from '../../lib/utils/ga4';
 
 
@@ -53,7 +53,6 @@ export default function ModalHeader({setOpen}) {
                     </Button>
                 </RightHeader>
             </HeaderContainer>
-            <Divider />
         </>
     );
 }
