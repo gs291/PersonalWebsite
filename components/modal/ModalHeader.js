@@ -1,6 +1,6 @@
 import {Close} from '@mui/icons-material';
 import {styled} from '@mui/material/styles';
-import {Button, Divider, Typography} from '@mui/material';
+import {Button, Typography} from '@mui/material';
 import {BUTTON_PREFIX, SELECT_CONTENT_BUTTON, ga4SendSelectContent} from '../../lib/utils/ga4';
 
 
@@ -26,10 +26,10 @@ const RightHeader = styled('div')`
 
 const GA4_CLOSE_MODAL_ID = "CLOSE_MODAL";
 
-export default function ModalHeader({setOpen}) {
+export default function ModalHeader({handleClose}) {
 
-    const handleClose = () => {
-        setOpen(false);
+    const handleClick = () => {
+        handleClose();
 
         ga4SendSelectContent(SELECT_CONTENT_BUTTON, {
             item_id: `${BUTTON_PREFIX}${GA4_CLOSE_MODAL_ID}`
@@ -47,13 +47,12 @@ export default function ModalHeader({setOpen}) {
                 <RightHeader>
                     <Button
                         variant="outlined"
-                        onClick={handleClose}
+                        onClick={handleClick}
                     >
                         <Close />
                     </Button>
                 </RightHeader>
             </HeaderContainer>
-            <Divider />
         </>
     );
 }

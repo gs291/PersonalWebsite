@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import {Box, Modal} from '@mui/material';
 import {styled} from '@mui/material/styles';
+import {Box, Divider, Modal} from '@mui/material';
 
 import ModalBody from './ModalBody';
 import ModalHeader from './ModalHeader';
@@ -18,11 +18,20 @@ const ModalContainer = styled(Box)`
   border-radius: 20px;
 `;
 
+const ModalDivider = styled(Divider)`
+  border-color: ${props => props.theme.palette.primary.main};
+`;
+
 export default function ContactMeModal({open, setOpen}) {
     const [form, setForm] = useState({"name": "", "email": "", "message": ""})
     const [errors, setErrors] = useState({"name": false, "email": false, "message": false})
 
-    const handleClose = () => setOpen(false);
+    const handleClose = () => {
+        setForm({"name": "", "email": "", "message": ""});
+        setErrors({"name": false, "email": false, "message": false});
+
+        setOpen(false);
+    };
 
     return (
         <>
@@ -31,8 +40,10 @@ export default function ContactMeModal({open, setOpen}) {
                 onClose={handleClose}
             >
                 <ModalContainer>
-                    <ModalHeader setOpen={setOpen} />
+                    <ModalHeader handleClose={handleClose} />
+                    <ModalDivider />
                     <ModalBody errors={errors} form={form} setForm={setForm} />
+                    <ModalDivider />
                     <ModalFooter form={form} setForm={setForm} setErrors={setErrors} />
                 </ModalContainer>
             </Modal>

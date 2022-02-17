@@ -7,17 +7,17 @@ import {getMobile} from '../../lib/redux/selectors';
 import {globalOptions} from '../../lib/utils/emotionStyled';
 import SplashBackground from '../background/SplashBackground';
 
-const IntroductionContainer = styled('header')`
+
+const IntroductionContainer = styled('header', globalOptions)`
   background-color: ${props => props.theme.palette.background.default};
-  min-height: 90vh;
+  min-height: 82.5vh;
   position: relative;
-  
 `;
 
 const DarkModeContainer = styled('div', globalOptions)`
   position: absolute;
   z-index: 0;
-  bottom: 0;
+  bottom: 20px;
   right: ${props => props['data-m'] ? 10 : 30}vw;
 `;
 
@@ -43,7 +43,7 @@ export default function Introduction({className}) {
 
     return (
         <>
-            <IntroductionContainer className={className}>
+            <IntroductionContainer className={className} data-m={mobile}>
                 <SplashBackground />
                 <TextContainer data-m={mobile}>
                     <Typography variant={mobile ? 'h2' : 'h1'} component="h1">

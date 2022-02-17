@@ -10,8 +10,10 @@ import {getDarkMode} from '../../lib/redux/selectors';
 import {toggleDarkMode} from '../../lib/redux/actions';
 import {BUTTON_PREFIX, SELECT_CONTENT_BUTTON, ga4SendSelectContent} from '../../lib/utils/ga4';
 
+
 const Background = styled(Paper)`
   transition: 0.3s;
+  border-radius: 50%;
   
   &:hover {
     background-color: ${props => props.theme.palette.hover.main};
@@ -22,6 +24,7 @@ const DarkModeButton = styled(Button)`
   padding: 0;
   width: 64px;
   height: 64px;
+  border-radius: 50%;
 `;
 
 const iconSize = css`

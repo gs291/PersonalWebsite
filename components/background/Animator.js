@@ -5,6 +5,7 @@ import RightToLeft from './RightToLeft';
 import LeftToRight from './LeftToRight';
 import {randomColor} from '../../lib/utils/utils';
 
+
 export default function Animator({direction, top, delay}) {
     const theme = useTheme();
     const [backgroundColor, setBackgroundColor] = useState(theme.palette.splash[0]);

@@ -6,7 +6,6 @@ import AboutMe from '../components/index/AboutMe';
 import Projects from '../components/project/Projects';
 import Navigation from '../components/page/Navigation';
 import TitleDivider from '../components/title/TitleDivider';
-import FixedDivider from '../components/divider/FixedDivider';
 import Experiences from '../components/experience/Experiences';
 import ContactMeModal from '../components/modal/ContactMeModal';
 
@@ -26,7 +25,6 @@ export default function Home() {
 
     return (
         <>
-            <FixedDivider width={100} />
             <Navigation />
             <Container maxWidth="lg">
                 <IndexContainer>

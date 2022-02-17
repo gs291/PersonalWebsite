@@ -1,5 +1,5 @@
+import {TextField} from '@mui/material';
 import {styled} from '@mui/material/styles';
-import {Divider, TextField} from '@mui/material';
 
 
 const BodyContainer = styled('div')`
@@ -52,7 +52,6 @@ export default function ModalBody({errors, form, setForm}) {
                     {...(errors.message ? {helperText: "Empty message"} : null)}
                 />
             </BodyContainer>
-            <Divider />
         </>
     );
 }

@@ -3,6 +3,7 @@ import {styled} from '@mui/material/styles';
 
 import {globalOptions} from '../../lib/utils/emotionStyled';
 
+
 const FDivider = styled(Divider, globalOptions)`
   width: ${props => props['data-w']}%;
   margin-bottom: 30px;
