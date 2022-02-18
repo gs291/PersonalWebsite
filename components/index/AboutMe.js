@@ -107,7 +107,7 @@ export default function AboutMe({setOpenModal}) {
                 <SocialsContainer>
                     <Twitter href="https://twitter.com/GS_291" />
                     <Instagram href="https://www.instagram.com/gregory_sanchez/" />
-                    <LinkedIn href="https://www.linkedin.com/in/gregory-sanchez-05b211159" />
+                    <LinkedIn href="https://www.linkedin.com/in/gs291" />
                     <GitHub href="https://github.com/gs291" />
                     <PDFContainer>
                         <Typography variant="h6">
