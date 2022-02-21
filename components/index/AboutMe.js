@@ -41,10 +41,11 @@ const Title = styled(Typography)`
 
 const Text = styled(Typography)`
   font-size: 1.25em;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 const EducationText = styled(Typography)`
+  margin-top: 10px;
   font-size: 1.15em;
 `;
 
@@ -86,8 +87,14 @@ export default function AboutMe({setOpenModal}) {
                     I've worked and developed in all areas of Computer Science including program, web, Android and hardware development.
                 </Text>
                 <Text variant="body1">
-                    I was introduced to technology at a very early age.
-                    Since then I have been very fond of technology which then led to my passion of software development.
+                    Early in my life I had constant exposure to computers, and I have since been amazed at their potential.
+                    I understood the possibilities that could come from technology, and I knew that I could be a creator of a possibility.
+                    Being intrigued with new advancements in the world paved the way for wanting to work at a technology company.
+                </Text>
+                <Text variant="body1">
+                    I am a hard worker; I will complete a given task the most efficient and best way possible.
+                    Also, I am confident in my ability to try new things and succeed.
+                    This is because of my leadership skills and knowledge I have acquired while attending Oregon State University.
                 </Text>
 
                 <Title variant={mobile ? 'h6' : 'h5'}>
@@ -100,6 +107,9 @@ export default function AboutMe({setOpenModal}) {
                         </EducationText>
                         <EducationText variant="body1">
                             Cumulative GPA: 3.85
+                        </EducationText>
+                        <EducationText variant="body1">
+                            Honors: Summa Cum Laude
                         </EducationText>
                     </li>
                 </ul>
