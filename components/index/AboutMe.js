@@ -89,7 +89,7 @@ export default function AboutMe({setOpenModal}) {
                 <Text variant="body1">
                     Early in my life I had constant exposure to computers, and I have since been amazed at their potential.
                     I understood the possibilities that could come from technology, and I knew that I could be a creator of a possibility.
-                    Being intrigued with new advancements in the world paved the way for wanting to work at a technology company.
+                    Being intrigued with new advancements in the world paved the way for wanting to work in Computer Science.
                 </Text>
                 <Text variant="body1">
                     I am a hard worker; I will complete a given task the most efficient and best way possible.
