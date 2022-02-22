@@ -66,6 +66,10 @@ const PDFContainer = styled('div')`
   align-items: center;
 `;
 
+const PDFText = styled(Typography)`
+  font-size: 1rem;
+`;
+
 export default function AboutMe({setOpenModal}) {
     const mobile = useSelector(getMobile);
 
@@ -122,9 +126,9 @@ export default function AboutMe({setOpenModal}) {
                     <GitHub href="https://github.com/gs291" />
                     <Polywork href="https://poly.work/sanchegr" />
                     <PDFContainer>
-                        <Typography variant="h6">
+                        <PDFText variant="h6">
                             Resume
-                        </Typography>
+                        </PDFText>
                         <PDF href="gregory_sanchez_website_resume.pdf" />
                     </PDFContainer>
                 </SocialsContainer>
