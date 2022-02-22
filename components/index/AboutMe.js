@@ -8,6 +8,7 @@ import PDF from '../icon-links/PDF';
 import GitHub from '../icon-links/GitHub';
 import Twitter from '../icon-links/Twitter';
 import LinkedIn from '../icon-links/LinkedIn';
+import Polywork from '../icon-links/Polywork';
 import Instagram from '../icon-links/Instagram';
 import profilePic from '../../public/about.jpg';
 import {getMobile} from '../../lib/redux/selectors';
@@ -119,6 +120,7 @@ export default function AboutMe({setOpenModal}) {
                     <Instagram href="https://www.instagram.com/gregory_sanchez/" />
                     <LinkedIn href="https://www.linkedin.com/in/gs291" />
                     <GitHub href="https://github.com/gs291" />
+                    <Polywork href="https://poly.work/sanchegr" />
                     <PDFContainer>
                         <Typography variant="h6">
                             Resume
