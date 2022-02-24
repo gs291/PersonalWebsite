@@ -1,6 +1,6 @@
 import {useSelector} from 'react-redux';
-import {Typography} from '@mui/material';
 import {styled} from '@mui/material/styles';
+import {Chip, Typography} from '@mui/material';
 
 import GitHub from '../icon-links/GitHub';
 import Reddit from '../icon-links/Reddit';
@@ -34,7 +34,7 @@ const SpacedFlex = styled('div', globalOptions)`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0 20px;
+  gap: 20px;
   
   width: ${props => props['data-m'] ? '100' : props['data-w']}%;
 `;
@@ -55,11 +55,17 @@ export default function Project({project}) {
                     </SpacedFlex>
                     <SpacedFlex data-w={70} data-m={mobile}>
                         {project.services.map((language, idx) => (
-                            <div key={idx}>
-                                <Detail variant="body2">
-                                    {language}
-                                </Detail>
-                            </div>
+                            <Chip
+                                key={idx}
+                                label={(
+                                    <Typography variant="body1">
+                                        {language}
+                                    </Typography>
+                                )}
+                                variant="outlined"
+                                color="primary"
+                                clickable
+                            />
                         ))}
                     </SpacedFlex>
                 </LinksAndLanguages>
