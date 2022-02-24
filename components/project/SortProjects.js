@@ -79,7 +79,11 @@ export default function SortProjects({sortBy, setSortBy}) {
                     {sortLanguages.map(language => (
                         <Chip
                             key={language.sortBy}
-                            label={language.label}
+                            label={(
+                                <Typography variant="body1">
+                                    {language.label}
+                                </Typography>
+                            )}
                             onClick={() => handleClick(language.sortBy)}
                             variant={sortBy === language.sortBy ? 'filled' : 'outlined'}
                             color="primary"
