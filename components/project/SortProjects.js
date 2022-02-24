@@ -24,7 +24,8 @@ const ChipContainer = styled('div')`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0 10px;
+  gap: 20px 10px;
+  flex-wrap: wrap;
 `;
 
 const sortLanguages = [
@@ -39,6 +40,10 @@ const sortLanguages = [
     {
         "label": "Java",
         "sortBy": "Java"
+    },
+    {
+        "label": "C/C++",
+        "sortBy": "C"
     },
     {
         "label": "SystemVerilog",
