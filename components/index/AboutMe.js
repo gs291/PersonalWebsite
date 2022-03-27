@@ -10,7 +10,7 @@ import Twitter from '../icon-links/Twitter';
 import LinkedIn from '../icon-links/LinkedIn';
 import Polywork from '../icon-links/Polywork';
 import Instagram from '../icon-links/Instagram';
-import profilePic from '../../public/about.jpg';
+import profilePic from '../../public/about.jpeg';
 import {getMobile} from '../../lib/redux/selectors';
 import ContactMeButton from '../button/ContactMeButton';
 
