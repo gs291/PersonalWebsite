@@ -24,7 +24,8 @@ const ChipContainer = styled('div')`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0 10px;
+  gap: 20px 10px;
+  flex-wrap: wrap;
 `;
 
 const sortLanguages = [
@@ -39,6 +40,10 @@ const sortLanguages = [
     {
         "label": "Java",
         "sortBy": "Java"
+    },
+    {
+        "label": "C/C++",
+        "sortBy": "C"
     },
     {
         "label": "SystemVerilog",
@@ -74,7 +79,11 @@ export default function SortProjects({sortBy, setSortBy}) {
                     {sortLanguages.map(language => (
                         <Chip
                             key={language.sortBy}
-                            label={language.label}
+                            label={(
+                                <Typography variant="body1">
+                                    {language.label}
+                                </Typography>
+                            )}
                             onClick={() => handleClick(language.sortBy)}
                             variant={sortBy === language.sortBy ? 'filled' : 'outlined'}
                             color="primary"

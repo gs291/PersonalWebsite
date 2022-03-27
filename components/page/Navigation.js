@@ -27,12 +27,16 @@ const MLink = styled(MUILink)`
   }
 `;
 
+const NavText = styled(Typography)`
+  text-align: center;
+`;
+
 const LinkComponent = ({href, title, mobile}) => (
     <Link href={href} passHref>
         <MLink underline="none">
-            <Typography variant={mobile ? 'h5' : 'h3'}>
+            <NavText variant={mobile ? 'h5' : 'h3'}>
                 {title}
-            </Typography>
+            </NavText>
         </MLink>
     </Link>
 );
