@@ -44,6 +44,7 @@ const Title = styled(Typography)`
 const Text = styled(Typography)`
   font-size: 1.25em;
   margin-bottom: 20px;
+  text-align: center;
 `;
 
 const ContactText = styled(Typography, globalOptions)`
