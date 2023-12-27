@@ -78,7 +78,7 @@ export default function ModalFooter({form, setForm, setErrors}) {
             <FooterContainer>
                 {progress.isError && (
                     <>
-                        <ErrorSuccessContainer data-s={progress.isSuccess}>>
+                        <ErrorSuccessContainer data-s={progress.isSuccess}>
                             <Typography variant="h4">
                                 ERROR
                             </Typography>
