@@ -44,6 +44,9 @@ const Title = styled(Typography)`
 const Text = styled(Typography)`
   margin-bottom: 20px;
   text-align: center;
+`;
+
+const PrimaryText = styled(Text)`
   color: ${props => props.theme.palette.primary.main};
 `;
 
@@ -112,12 +115,28 @@ export default function AboutMe({setOpenModal}) {
                         />
                     </ImageWrapper>
                 </ImageContainer>
-                <Text variant="h4">
-                    Full Stack Developer with {get_years_since_the_start()} years of Computer Science experience
-                </Text>
-                <Text variant="h5">
-                    Vast knowledge in Web, Mobile, Porgram and Hardware Development.
-                </Text>
+                {mobile ? (
+                  <>
+                    <Text variant="h4">
+                      Gregory Sanchez 
+                    </Text>
+                    <Text variant="h4">
+                      Full Stack Developer
+                    </Text>
+                  </>
+                ) : (
+                  <>
+                    <Text variant="h4">
+                      Gregory Sanchez • Full Stack Developer
+                    </Text>
+                  </>
+                )}
+                <PrimaryText variant="h4">
+                    {get_years_since_the_start()} years of Computer Science experience
+                </PrimaryText>
+                <PrimaryText variant="h5">
+                    Vast knowledge in Web, Mobile, Program and Hardware Development.
+                </PrimaryText>
                 <Title variant={mobile ? 'h6' : 'h5'}>
                     Education
                 </Title>
