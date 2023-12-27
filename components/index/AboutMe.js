@@ -13,6 +13,7 @@ import Instagram from '../icon-links/Instagram';
 import profilePic from '../../public/about.jpeg';
 import {getMobile} from '../../lib/redux/selectors';
 import ContactMeButton from '../button/ContactMeButton';
+import {globalOptions} from '../../lib/utils/emotionStyled';
 
 
 const ImageContainer = styled('div')`
@@ -45,6 +46,15 @@ const Text = styled(Typography)`
   margin-bottom: 20px;
 `;
 
+const ContactText = styled(Typography, globalOptions)`
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: ${props => props.theme.palette.primary.main};
+`;
+
 const EducationText = styled(Typography)`
   margin-top: 10px;
   font-size: 1.15em;
@@ -73,6 +83,20 @@ const PDFText = styled(Typography)`
 export default function AboutMe({setOpenModal}) {
     const mobile = useSelector(getMobile);
 
+    function get_years_since_the_start() {
+        const today = new Date();
+        const start_of_cs = new Date("2015-01-01");
+
+        const diff = Math.floor(today.getTime() - start_of_cs.getTime());
+        const day = 1000 * 60 * 60 * 24;
+
+        const days = Math.floor(diff/day);
+        const months = Math.floor(days/31);
+        const years = Math.floor(months/12);
+
+        return years
+    }
+
     return (
         <>
             <Card>
@@ -88,20 +112,9 @@ export default function AboutMe({setOpenModal}) {
                     </ImageWrapper>
                 </ImageContainer>
                 <Text variant="body1">
-                    I'm a full stack developer with 7 years of Computer Science experience!
-                    I've worked and developed in all areas of Computer Science including program, web, Android and hardware development.
+                    I'm a full stack developer with {get_years_since_the_start()} years of Computer Science experience!
+                    I've worked in all areas of Computer Science including Web, Mobile, Porgram and Hardware Development.
                 </Text>
-                <Text variant="body1">
-                    Early in my life I had constant exposure to computers, and I have since been amazed at their potential.
-                    I understood the possibilities that could come from technology, and I knew that I could be a creator of a possibility.
-                    Being intrigued with new advancements in the world paved the way for wanting to work in Computer Science.
-                </Text>
-                <Text variant="body1">
-                    I am a hard worker; I will complete a given task the most efficient and best way possible.
-                    Also, I am confident in my ability to try new things and succeed.
-                    This is because of my leadership skills and knowledge I have acquired while attending Oregon State University.
-                </Text>
-
                 <Title variant={mobile ? 'h6' : 'h5'}>
                     Education
                 </Title>
@@ -118,6 +131,9 @@ export default function AboutMe({setOpenModal}) {
                         </EducationText>
                     </li>
                 </ul>
+                <ContactText variant="body1">
+                    Contact Me for coding inquires or anything Computer Science related!
+                </ContactText>
                 <ContactMeButton setOpenModal={setOpenModal}/>
                 <SocialsContainer>
                     <Twitter href="https://twitter.com/GS_291" />
