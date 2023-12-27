@@ -54,7 +54,7 @@ export default function Navigation() {
                 <NavToolbar data-m={mobile}>
                     <LinkComponent href="#about-me" title="About Me" mobile={mobile}/>
                     <LinkComponent href="#experience" title="Experience" mobile={mobile}/>
-                    <LinkComponent href="#projects" title="Projects" mobile={mobile}/>
+                    <LinkComponent href="#my-work" title="My Work" mobile={mobile}/>
                 </NavToolbar>
             </NavAppBar>
         </>

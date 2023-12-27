@@ -30,7 +30,7 @@ const ChipContainer = styled('div')`
 
 const sortLanguages = [
     {
-        "label": "JavaScript",
+        "label": "JavaScript (including Websites)",
         "sortBy": "JS"
     },
     {

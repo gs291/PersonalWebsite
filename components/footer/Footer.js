@@ -18,11 +18,10 @@ export default function Footer({ className }) {
 
     return (
         <FooterContainer className={className}>
-            <Twitter href="https://twitter.com/GS_291" />
-            <Instagram href="https://www.instagram.com/gregory_sanchez/" />
             <LinkedIn href="https://www.linkedin.com/in/gs291" />
             <GitHub href="https://github.com/gs291" />
-            <Polywork href="https://poly.work/sanchegr" />
+            <Instagram href="https://www.instagram.com/gregory_sanchez/" />
+            <Twitter href="https://twitter.com/GS_291" />
         </FooterContainer>
     );
 }

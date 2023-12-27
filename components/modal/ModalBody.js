@@ -19,7 +19,8 @@ export default function ModalBody({errors, form, setForm}) {
                     required
                     fullWidth
                     name="name"
-                    label="Name"
+                    label="Your Name"
+                    placeholder="Gregory Sanchez"
                     margin="normal"
                     onChange={handleChange}
                     error={errors.name}
@@ -30,7 +31,8 @@ export default function ModalBody({errors, form, setForm}) {
                     required
                     fullWidth
                     name="email"
-                    label="Email"
+                    label="Your Email Address"
+                    placeholder="my.name@email.com"
                     type="email"
                     margin="normal"
                     onChange={handleChange}
@@ -42,7 +44,9 @@ export default function ModalBody({errors, form, setForm}) {
                     required
                     fullWidth
                     name="message"
-                    label="Message"
+                    label="Leave a Message"
+                    helperText="Feel free to inquire about anything and to be as thorough as you'd like!"
+                    placeholder="I'd like a website and mobile app for my business."
                     multiline
                     rows={4}
                     margin="normal"

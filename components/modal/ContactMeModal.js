@@ -1,17 +1,20 @@
 import {useState} from 'react';
+import {useSelector} from 'react-redux';
 import {styled} from '@mui/material/styles';
 import {Box, Divider, Modal} from '@mui/material';
 
 import ModalBody from './ModalBody';
 import ModalHeader from './ModalHeader';
 import ModalFooter from './ModalFooter';
+import {getMobile} from '../../lib/redux/selectors';
+import {globalOptions} from '../../lib/utils/emotionStyled';
 
 
-const ModalContainer = styled(Box)`
+const ModalContainer = styled(Box, globalOptions)`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: ${props => props['data-m'] ? "90%" : "400px"};
   
   transform: translate(-50%, -50%);
   background-color: ${props => props.theme.palette.background.paper};
@@ -23,6 +26,8 @@ const ModalDivider = styled(Divider)`
 `;
 
 export default function ContactMeModal({open, setOpen}) {
+    const mobile = useSelector(getMobile);
+
     const [form, setForm] = useState({"name": "", "email": "", "message": ""})
     const [errors, setErrors] = useState({"name": false, "email": false, "message": false})
 
@@ -39,7 +44,7 @@ export default function ContactMeModal({open, setOpen}) {
                 open={open}
                 onClose={handleClose}
             >
-                <ModalContainer>
+                <ModalContainer data-m={mobile}>
                     <ModalHeader handleClose={handleClose} />
                     <ModalDivider />
                     <ModalBody errors={errors} form={form} setForm={setForm} />

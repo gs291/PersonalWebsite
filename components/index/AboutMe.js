@@ -42,9 +42,9 @@ const Title = styled(Typography)`
 `;
 
 const Text = styled(Typography)`
-  font-size: 1.25em;
   margin-bottom: 20px;
   text-align: center;
+  color: ${props => props.theme.palette.primary.main};
 `;
 
 const ContactText = styled(Typography, globalOptions)`
@@ -112,9 +112,11 @@ export default function AboutMe({setOpenModal}) {
                         />
                     </ImageWrapper>
                 </ImageContainer>
-                <Text variant="body1">
-                    I'm a full stack developer with {get_years_since_the_start()} years of Computer Science experience!
-                    I've worked in all areas of Computer Science including Web, Mobile, Porgram and Hardware Development.
+                <Text variant="h4">
+                    Full Stack Developer with {get_years_since_the_start()} years of Computer Science experience
+                </Text>
+                <Text variant="h5">
+                    Vast knowledge in Web, Mobile, Porgram and Hardware Development.
                 </Text>
                 <Title variant={mobile ? 'h6' : 'h5'}>
                     Education
@@ -137,17 +139,16 @@ export default function AboutMe({setOpenModal}) {
                 </ContactText>
                 <ContactMeButton setOpenModal={setOpenModal}/>
                 <SocialsContainer>
-                    <Twitter href="https://twitter.com/GS_291" />
-                    <Instagram href="https://www.instagram.com/gregory_sanchez/" />
                     <LinkedIn href="https://www.linkedin.com/in/gs291" />
                     <GitHub href="https://github.com/gs291" />
-                    <Polywork href="https://poly.work/sanchegr" />
                     <PDFContainer>
                         <PDFText variant="h6">
                             Resume
                         </PDFText>
                         <PDF href="gregory_sanchez_website_resume.pdf" />
                     </PDFContainer>
+                    <Instagram href="https://www.instagram.com/gregory_sanchez/" />
+                    <Twitter href="https://twitter.com/GS_291" />
                 </SocialsContainer>
             </Card>
         </>
