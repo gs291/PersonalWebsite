@@ -61,7 +61,7 @@ export default function CardDefaultInfo({item}) {
     return (
         <>
             <Title variant="h3">
-                {item.name}
+                {item.description}
             </Title>
             <DateContainer>
                 <DateIcon />
@@ -70,7 +70,7 @@ export default function CardDefaultInfo({item}) {
                 </Date>
             </DateContainer>
             <Description variant="body1" data-m={mobile}>
-                {item.description}
+                {item.name}
             </Description>
             <DetailsList data-m={mobile}>
                 {item.details.map((detail, idx) => (
