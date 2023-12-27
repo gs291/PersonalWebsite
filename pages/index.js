@@ -36,7 +36,7 @@ export default function Home() {
                     <Experiences />
                 </IndexContainer>
                 <IndexContainer>
-                    <TitleDivider title="Projects" id="projects" />
+                    <TitleDivider title="My Work" id="my-work" />
                     <Projects />
                 </IndexContainer>
             </Container>
