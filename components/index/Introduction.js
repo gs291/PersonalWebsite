@@ -12,7 +12,7 @@ import SplashBackground from '../background/SplashBackground';
 
 const IntroductionContainer = styled('header', globalOptions)`
   background-color: ${props => props.theme.palette.background.default};
-  min-height: 85vh;
+  min-height: 82.5vh;
   position: relative;
 `;
 
@@ -37,10 +37,10 @@ const TextContainer = styled('div', globalOptions)`
   padding: 0 ${props => props['data-m'] ? 0 : '5%'};
   padding-top: 5rem;
   transition: 0.3s;
-  margin-top: ${props => props['data-m'] ? '10%' : '15%'};
+  margin-top: ${props => props['data-m'] ? '5vh' : '10vh'};
 
   @media only screen and (orientation: landscape) and (max-device-width : 1223px) {
-    margin-top: -2%;
+    margin-top: -10vh;
     flex-direction: row;
     justify-content: space-evenly;
   }
