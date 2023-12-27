@@ -34,7 +34,7 @@ const NavText = styled(Typography)`
 const LinkComponent = ({href, title, mobile}) => (
     <Link href={href} passHref>
         <MLink underline="none">
-            <NavText variant={mobile ? 'h5' : 'h3'}>
+            <NavText variant={mobile ? 'h4' : 'h3'}>
                 {title}
             </NavText>
         </MLink>
@@ -52,7 +52,6 @@ export default function Navigation() {
                 data-m={mobile}
             >
                 <NavToolbar data-m={mobile}>
-                    <LinkComponent href="#about-me" title="About Me" mobile={mobile}/>
                     <LinkComponent href="#experience" title="Experience" mobile={mobile}/>
                     <LinkComponent href="#my-work" title="My Work" mobile={mobile}/>
                 </NavToolbar>
