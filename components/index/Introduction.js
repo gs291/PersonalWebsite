@@ -37,7 +37,7 @@ const TextContainer = styled('div', globalOptions)`
   padding: 0 ${props => props['data-m'] ? 0 : '5%'};
   padding-top: 5rem;
   transition: 0.3s;
-  margin-top: ${props => props['data-m'] ? '5vh' : '10vh'};
+  margin-top: ${props => props['data-m'] ? '-5vh' : '10vh'};
 
   @media only screen and (orientation: landscape) and (max-device-width : 1223px) {
     margin-top: -10vh;
